@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/editLoginEmail"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="221dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="99dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:ems="10"
+            android:id="@+id/editLoginPassword"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="306dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="99dp"/>
+    <TextView
+            android:text="Email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView11"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="202dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="99dp"/>
+    <TextView
+            android:text="Lozinka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView13"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="287dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="99dp"/>
+    <Button
+            android:text="Prijava"
+            android:layout_width="138dp"
+            android:layout_height="46dp" android:id="@+id/onClickLogin"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="380dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="136dp" android:backgroundTint="@android:color/holo_red_dark"
+            app:cornerRadius="14dp"/>
+    <ImageView
+            android:layout_width="149dp"
+            android:layout_height="121dp" app:srcCompat="@mipmap/heartswing_foreground"
+            android:id="@+id/imageView" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
+    <ImageView
+            android:layout_width="323dp"
+            android:layout_height="208dp" app:srcCompat="@mipmap/heartswing_foreground"
+            android:id="@+id/imageView2" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="445dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="87dp"/>
+    <TextView
+            android:text="Prijava"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView14"
+            android:scaleX="2.5" android:scaleY="2.5"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="121dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="184dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

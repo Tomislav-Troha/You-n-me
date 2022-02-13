@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <TextView
+            android:text="Ti si"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView4"
+            android:scaleX="2" android:scaleY="2"
+            app:layout_constraintTop_toTopOf="@+id/trazisView" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/trazisView"
+            android:layout_marginStart="88dp" app:layout_constraintVertical_bias="0.0"/>
+    <TextView
+            android:text="Tražiš"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/trazisView"
+            android:scaleX="2" android:scaleY="2"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="200dp" android:layout_marginEnd="92dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageButton
+            android:layout_width="78dp"
+            android:layout_height="78dp" app:srcCompat="@mipmap/male_foreground" android:id="@+id/lookForMale"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="249dp" android:layout_marginEnd="28dp" app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageButton
+            android:layout_width="78dp"
+            android:layout_height="78dp" app:srcCompat="@mipmap/female_foreground" android:id="@+id/lookForFemale"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="249dp" android:layout_marginEnd="115dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageButton
+            android:layout_width="78dp"
+            android:layout_height="78dp" app:srcCompat="@mipmap/male_foreground" android:id="@+id/youAreMale"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="249dp" android:layout_marginEnd="225dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <ImageButton
+            android:layout_width="78dp"
+            android:layout_height="78dp" app:srcCompat="@mipmap/female_foreground"
+            android:id="@+id/youAreFemale"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="249dp" android:layout_marginEnd="310dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    <Button
+            android:text="Dalje"
+            android:layout_width="145dp"
+            android:layout_height="49dp" android:id="@+id/buttonDalje"
+            android:backgroundTint="@android:color/holo_red_dark"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="352dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="132dp"/>
+    <TextView
+            android:text="Pronađi svoj spoj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView9"
+            android:scaleX="3" android:scaleY="3"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="51dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="150dp"
+    />
+    <ImageView
+            android:layout_width="347dp"
+            android:layout_height="129dp" app:srcCompat="@mipmap/hearts2" android:id="@+id/imageView14"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="70dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="34dp"/>
+    <ImageView
+            android:layout_width="280dp"
+            android:layout_height="230dp" app:srcCompat="@mipmap/heartswing_foreground"
+            android:id="@+id/imageView16" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="404dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="64dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tiSi"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="328dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="84dp" android:scaleX="1.5" android:scaleY="1.5"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/trazis"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="328dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="276dp" android:scaleX="1.5" android:scaleY="1.5"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+           android:icon="@mipmap/home_foreground"
+            android:id="@+id/home"
+            android:title="@string/Home"
+            />
+    <item
+            android:icon="@mipmap/lovechat_foreground"
+            android:id="@+id/nesto"
+            android:title="@string/Chat"
+            />
+    <item
+            android:icon="@mipmap/dolezabar_foreground"
+            android:id="@+id/profil"
+            android:title="@string/Profil"
+          />
+</menu>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.HomePage"
+        android:outlineProvider="bounds">
+    <View
+            android:id="@+id/splitLine_hor2"
+            android:layout_width="380dp"
+            android:layout_height="2dp"
+            android:background="#000000"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="528dp" android:layout_marginStart="18dp"/>
+    <View
+            android:id="@+id/splitLine_hor4"
+            android:layout_width="380dp"
+            android:layout_height="2dp"
+            android:background="#000000"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="432dp" android:layout_marginStart="18dp"/>
+    <View
+            android:id="@+id/splitLine_hor3"
+            android:layout_width="380dp"
+            android:layout_height="2dp"
+            android:background="#000000"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="332dp" android:layout_marginStart="16dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/txProfilenadimak"
+            android:scaleX="2" android:scaleY="2"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="196dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="164dp" android:text="Walter"/>
+    <TextView
+            android:text="30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView10"
+            android:scaleX="2" android:scaleY="2"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="196dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="244dp"/>
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="194dp"
+            android:layout_height="142dp"
+            android:src="@drawable/resume"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/onClickGoToProfileEdit" android:layout_weight="1"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="28dp"
+            app:civ_border_width="3dp"
+            app:civ_border_color="#FFEF2719"
+            app:layout_constraintHorizontal_bias="0.497"/>
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="74dp" tools:layout_editor_absoluteX="1dp"
+            android:id="@+id/onClickPretplata" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="258dp">
+
+        <TextView
+                android:text="Pretplata"
+                android:textColor="@drawable/text_selector"
+                android:layout_width="140dp"
+                android:layout_height="37dp"
+                android:scaleX="2" android:scaleY="2"
+                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" android:layout_marginTop="19dp" android:layout_marginStart="23dp"
+        />
+        <TextView
+                android:text="Aktiviraj"
+                android:textColor="#FF3C3C"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView19"
+                android:layout_alignParentTop="true" android:layout_marginTop="31dp"
+                android:layout_alignParentEnd="true" android:layout_marginEnd="16dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="361dp">
+
+        <TextView
+                android:text="Pomoć"
+                android:textColor="@drawable/text_selector"
+                android:layout_width="79dp"
+                android:layout_height="wrap_content" android:id="@+id/textView18"
+                android:scaleX="2" android:scaleY="2"
+                android:translationX="4dp"
+                android:gravity="center"
+                android:layout_alignParentBottom="true" android:layout_marginBottom="25dp"
+                android:layout_alignParentStart="true" android:layout_marginStart="33dp"/>
+        <ImageView
+                android:layout_width="37dp"
+                android:layout_height="37dp" app:srcCompat="@android:drawable/ic_menu_help"
+                android:id="@+id/imageView6"
+                android:layout_alignParentBottom="true" android:layout_marginBottom="18dp"
+                android:layout_alignParentEnd="true" android:layout_marginEnd="24dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+            android:layout_width="414dp"
+            android:layout_height="77dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="453dp" android:id="@+id/onClickSetting">
+
+        <TextView
+                android:text="Postavke"
+                android:textColor="@drawable/text_selector"
+                android:layout_width="118dp"
+                android:layout_height="wrap_content"
+                android:scaleX="2" android:scaleY="2"
+                android:gravity="center"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true" android:layout_marginBottom="24dp"
+                android:layout_marginStart="36dp"/>
+        <ImageView
+                android:layout_width="37dp"
+                android:layout_height="37dp" app:srcCompat="@android:drawable/ic_menu_manage"
+                android:id="@+id/imageView5"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp" android:layout_alignParentEnd="true"
+                android:layout_marginEnd="22dp"/>
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

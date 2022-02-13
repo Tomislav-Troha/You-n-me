@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="200dp"
+        android:layout_height="160dp"
+>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/relLayout9"
+            android:layout_marginTop="15dp" android:layout_alignParentStart="true" android:background="#D1D0D0"
+            android:layout_alignParentTop="true">
+
+
+        <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/RGroup">
+
+            <RadioButton
+                    android:layout_marginStart="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Muškarac"
+                    android:id="@+id/rbMuskarcaSpol"/>
+            <RadioButton
+                    android:layout_marginStart="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Žena"
+                    android:id="@+id/rbZenuSpol"/>
+        </RadioGroup>
+        <Button
+                android:text="Ok"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp" android:layout_alignParentStart="true"
+                android:layout_marginStart="57dp" android:id="@+id/OkSpol" android:layout_alignParentBottom="true"
+                android:layout_marginBottom="7dp" android:backgroundTint="#FD4949"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

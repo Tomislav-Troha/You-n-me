@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">You \'n Me</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com</string>
+
+    <!-- Paste BOTH strings as required -->
+    <string name="back4app_app_id">y5N7tWF7NOAHGXUfSjkGHTOzZSJdoRxnQfvNs3P4</string>
+    <string name="back4app_client_key">7zxbe7pW3vIqPa1DI4dAEicVRJGVMljtNUtXKwPG</string>
+    <string name="bottom_nav_menu">bottom_nav_menu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="person">Person</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="Home">Home</string>
+    <string name="Chat">Chat</string>
+    <string name="Profil">Profil</string>
+
+    <string name="action_settings">Spremi</string>
+
+</resources>
