@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <TextView
+            android:text="You 'n Me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView10"
+            android:scaleX="4" android:scaleY="4" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="156dp" android:layout_marginStart="176dp"
+            app:layout_constraintHorizontal_bias="0.021" android:fontFamily="cursive"/>
+    <ImageView
+            android:layout_width="411dp"
+            android:layout_height="338dp" app:srcCompat="@mipmap/home_foreground" android:id="@+id/imageView8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="252dp"
+            android:layout_marginStart="61dp" app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintVertical_bias="0.0"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
