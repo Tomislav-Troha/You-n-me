@@ -55,6 +55,7 @@ public class LoginPage extends AppCompatActivity {
                             if(user != null){
                                 Toast.makeText(getApplicationContext(), "Login uspiješan", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(LoginPage.this, HomePage.class));
+                                finish();
                             }else {
                                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                             }

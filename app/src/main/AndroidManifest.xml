@@ -32,14 +32,22 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.MyApplication"
             >
-        <activity android:name=".login_register.MainActivity"
+        <activity android:name=".splash.SplashActivity"
+                  android:theme="@style/MyTheme"
                   android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+                android:name=".login_register.MainActivity">
+        </activity>
+
+
 
         <meta-data
                 android:name="com.parse.SERVER_URL"

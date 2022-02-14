@@ -104,12 +104,14 @@ public class Choose extends AppCompatActivity {
         editProfile.put("User_email", pUser);
         editProfile.put("User_spol", tisi);
         editProfile.put("User_traziSpol", trazis);
+        editProfile.put("Datum_rodenja", "");
         editProfile.saveInBackground(new SaveCallback() {
             public void done(ParseException e) {
                 if (e == null) {
                     // your object is successfully created.
                     Toast.makeText(getApplicationContext(), "Podaci spremljeni", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(Choose.this, HomePage.class));
+                    finish();
                 } else {
                     //error occurred
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();

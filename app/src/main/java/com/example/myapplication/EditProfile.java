@@ -44,6 +44,13 @@ public class EditProfile extends AppCompatActivity {
 
     RelativeLayout openEditIme;
 
+    EditText onClickTrazimSpol;
+    EditText onClickIzmeduGodina;
+
+    EditText godinaOd;
+    EditText godinaDo;
+
+    ImageView saveYears;
 
 
     @Override
@@ -58,6 +65,10 @@ public class EditProfile extends AppCompatActivity {
         openPopupDatum =  findViewById(R.id.editTxDatumRodenja);
         openEditIme = findViewById(R.id.openPopupIme);
         username = findViewById(R.id.editTxNadimak);
+        godinaOd = findViewById(R.id.txGodinaOd);
+        godinaDo = findViewById(R.id.txGodinaDo);
+        onClickTrazimSpol = findViewById(R.id.onClickTrazimSpol);
+        saveYears = findViewById(R.id.savePickYears);
 
         //dohacanje podataka o useru
           getUserData();
@@ -80,6 +91,11 @@ public class EditProfile extends AppCompatActivity {
          //dohavaca nadimak
             username.setText(ParseUser.getCurrentUser().getUsername());
 
+         //trazi spol popup
+            openPopupPickSexForMeeting();
+
+         //sprema godine od i do
+            saveYearsForMeeting();
 
 
         //otvara library za odabir slike iz galerije ili fotoaparat
@@ -164,6 +180,45 @@ public class EditProfile extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    public void getUserData() {
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
+        query.whereEqualTo("User_email", ParseUser.getCurrentUser().getEmail());
+
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                String objectId = "";
+                if(e == null) {
+                    for (ParseObject object:objects){
+                        objectId = object.getObjectId();
+                    }
+                }
+                else {
+                    Log.e("Nesto je krivo", e.getMessage());
+                }
+
+                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("editProfile");
+                query.getInBackground(objectId, new GetCallback<ParseObject>() {
+                    @Override
+                    public void done(ParseObject object, ParseException e) {
+                        if(e == null) {
+                            txSpol.setText(object.getString("User_spol"));
+                            txIme.setText(object.getString("Ime"));
+                            openPopupDatum.setText(object.getString("Datum_rodenja"));
+                            onClickTrazimSpol.setText(object.getString("User_traziSpol"));
+                            godinaOd.setText(object.getString("Godine_od"));
+                            godinaDo.setText(object.getString("Godine_do"));
+                        }
+                        else {
+                            Log.e("Nista od toga", e.getMessage());
+                        }
+                    }
+                });
+            }
+        });
+    }
+
 
     void getProfileImageOfUser() {
 
@@ -190,7 +245,48 @@ public class EditProfile extends AppCompatActivity {
     }
 
 
-    String ime;
+    public void editYearsForMeeting(String godineOd, String godineDo) {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
+        query.whereEqualTo("User_email", ParseUser.getCurrentUser().getEmail());
+
+        query.getFirstInBackground(new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject object, ParseException e) {
+                String objectID = "";
+                if(e == null){
+                    objectID = object.getObjectId();
+
+                    query.getInBackground(objectID, new GetCallback<ParseObject>() {
+                        @Override
+                        public void done(ParseObject object, ParseException e) {
+                            if(e == null){
+                                object.put("Godine_od", godineOd);
+                                object.put("Godine_do", godineDo);
+
+                                object.saveInBackground(new SaveCallback() {
+                                    @Override
+                                    public void done(ParseException e) {
+                                        if (e == null) {
+                                            Toast.makeText(EditProfile.this, "Uspijesno azurirano", Toast.LENGTH_SHORT).show();
+                                        }
+                                        else {
+                                            Toast.makeText(EditProfile.this, "Doslo je do greske u azuriranju podataka" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                            } else {
+                                Toast.makeText(EditProfile.this, "Doslo je do greske u azuriranju coursa" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(EditProfile.this, "Doslo je do greske u objectID-u", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+
     public void editNameOfUser(String ime) {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
@@ -232,7 +328,7 @@ public class EditProfile extends AppCompatActivity {
         });
     }
 
-    String datumRodenja;
+
     public void editBirthDateOfUser(String datumRodenja) {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
@@ -274,7 +370,7 @@ public class EditProfile extends AppCompatActivity {
         });
     }
 
-    String spol;
+
     public void editSexOfUser(String spol) {
 
         ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
@@ -316,7 +412,49 @@ public class EditProfile extends AppCompatActivity {
         });
     }
 
-    String nadimak;
+
+    public void editPickSexForMeeting(String spol) {
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
+        query.whereEqualTo("User_email", ParseUser.getCurrentUser().getEmail());
+
+        query.getFirstInBackground(new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject object, ParseException e) {
+                String objectID = "";
+                if(e == null){
+                    objectID = object.getObjectId();
+
+                    query.getInBackground(objectID, new GetCallback<ParseObject>() {
+                        @Override
+                        public void done(ParseObject object, ParseException e) {
+                            if(e == null){
+                                object.put("User_traziSpol", spol);
+
+                                object.saveInBackground(new SaveCallback() {
+                                    @Override
+                                    public void done(ParseException e) {
+                                        if (e == null) {
+                                            Toast.makeText(EditProfile.this, "Uspijesno azurirano", Toast.LENGTH_SHORT).show();
+                                        }
+                                        else {
+                                            Toast.makeText(EditProfile.this, "Doslo je do greske u azuriranju podataka" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                            } else {
+                                Toast.makeText(EditProfile.this, "Doslo je do greske u azuriranju coursa" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                } else {
+                    Toast.makeText(EditProfile.this, "Doslo je do greske u objectID-u", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+
     public void editNameOfUsername(String nadimak) {
         ParseUser user = ParseUser.getCurrentUser();
         user.setUsername(nadimak);
@@ -334,42 +472,20 @@ public class EditProfile extends AppCompatActivity {
     }
 
 
-   public void getUserData() {
 
-       ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
-       query.whereEqualTo("User_email", ParseUser.getCurrentUser().getEmail());
 
-       query.findInBackground(new FindCallback<ParseObject>() {
-           @Override
-           public void done(List<ParseObject> objects, ParseException e) {
-               String objectId = "";
-               if(e == null) {
-                   for (ParseObject object:objects){
-                       objectId = object.getObjectId();
-                   }
-               }
-               else {
-                   Log.e("Nesto je krivo", e.getMessage());
-               }
+    String god_od;
+    String god_do;
+    public void saveYearsForMeeting() {
 
-               ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("editProfile");
-               query.getInBackground(objectId, new GetCallback<ParseObject>() {
-                   @Override
-                   public void done(ParseObject object, ParseException e) {
-                       if(e == null) {
-                           txSpol.setText(object.getString("User_spol"));
-                           txIme.setText(object.getString("Ime"));
-                           openPopupDatum.setText(object.getString("Datum_rodenja"));
-                       }
-                       else {
-                           Log.e("Nista od toga", e.getMessage());
-                       }
-                   }
-               });
-           }
-       });
+        saveYears.setOnClickListener(view -> {
+            god_od = godinaOd.getText().toString();
+            god_do = godinaDo.getText().toString();
+            editYearsForMeeting(god_od, god_do);
+        });
     }
 
+    String ime;
     public void openPopupEditName () {
         EditText editTextField  = new EditText(this);
         AlertDialog dialog = new AlertDialog.Builder(this)
@@ -390,6 +506,7 @@ public class EditProfile extends AppCompatActivity {
         dialog.show();
     }
 
+    String nadimak;
     public void openPopupEditUsername () {
         EditText editTextField  = new EditText(this);
         AlertDialog dialog = new AlertDialog.Builder(this)
@@ -410,6 +527,8 @@ public class EditProfile extends AppCompatActivity {
         dialog.show();
     }
 
+
+    String spol;
    public void openPopupEditSex() {
 
        openPopupSpol.setOnClickListener(new View.OnClickListener() {
@@ -453,6 +572,50 @@ public class EditProfile extends AppCompatActivity {
        });
     }
 
+
+    String trazimSpol;
+    public void openPopupPickSexForMeeting() {
+        onClickTrazimSpol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(EditProfile.this);
+                alertDialog.setTitle("Tražim");
+                String[] items = {"Muškarca","Ženu"};
+                int checkedItem = 1;
+                alertDialog.setSingleChoiceItems(items, checkedItem, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        switch (which) {
+                            case 0:
+                                onClickTrazimSpol.setText("Muškarca".toString());
+                                break;
+                            case 1:
+                                onClickTrazimSpol.setText("Ženu".toString());
+                                break;
+                        }
+                    }
+                });
+
+                alertDialog.setPositiveButton("Spremi", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        trazimSpol = onClickTrazimSpol.getText().toString();
+                        editPickSexForMeeting(trazimSpol);
+                    }
+                });
+                alertDialog.setNegativeButton("Odustani", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        // Canceled.
+                    }
+                });
+                AlertDialog alert = alertDialog.create();
+
+                alert.show();
+            }
+        });
+    }
+
+
+    String datumRodenja;
   public void  openPopupEditBirthdate() {
 
         openPopupDatum.setOnClickListener(new View.OnClickListener() {

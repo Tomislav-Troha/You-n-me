@@ -56,6 +56,7 @@ public class JoinUsPage extends AppCompatActivity  {
                             if(e == null) {
                                 Toast.makeText(getApplicationContext(), "Registracija uspjesna", Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(JoinUsPage.this, Choose.class));
+                                finish();
                             }else {
                                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
                             }
