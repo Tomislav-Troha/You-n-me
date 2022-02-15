@@ -39,12 +39,11 @@
         <TextView
                 android:text="Odjava"
                 android:textColor="#F63535"
-                android:layout_width="80dp"
-                android:layout_height="21dp"
-                android:scaleX="1.6" android:scaleY="1.6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_alignParentTop="true" android:layout_marginTop="24dp"
-                android:layout_alignParentStart="true" android:layout_marginStart="30dp"/>
+                android:layout_alignParentStart="true" android:layout_marginStart="25dp" android:textSize="30dp"/>
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp" app:srcCompat="@android:drawable/ic_menu_set_as"
@@ -61,13 +60,12 @@
                 android:text="Promjena lozinke"
                 android:clickable="true"
                 android:textColor="@drawable/text_selector"
-                android:layout_width="191dp"
-                android:layout_height="24dp" android:id="@+id/textView12"
-                android:scaleX="1.6" android:scaleY="1.6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView12"
                 android:gravity="center"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="24dp" android:layout_alignParentStart="true"
-                android:layout_marginStart="27dp"/>
+                android:layout_marginStart="25dp" android:textSize="30dp"/>
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp" app:srcCompat="@android:drawable/ic_lock_lock"
@@ -86,14 +84,12 @@
                 android:text="Upravljanje računom"
                 android:clickable="true"
                 android:textColor="@drawable/text_selector"
-                android:layout_width="217dp"
-                android:layout_height="30dp" android:id="@+id/textView15"
-                android:scaleX="1.6" android:scaleY="1.6"
-                android:translationX="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/textView15"
                 android:gravity="center|center_horizontal"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="24dp" android:layout_alignParentStart="true"
-                android:layout_marginStart="25dp"/>
+                android:layout_marginStart="25dp" android:textSize="30dp"/>
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp" app:srcCompat="@android:drawable/ic_menu_info_details"
@@ -112,13 +108,12 @@
                 android:text="Obavijesti"
                 android:clickable="true"
                 android:textColor="@drawable/text_selector"
-                android:layout_width="102dp"
-                android:layout_height="23dp"
-                android:scaleX="1.6" android:scaleY="1.6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:id="@+id/txoba"
-                android:translationX="20dp" android:gravity="center"
+                android:gravity="center"
                 android:layout_alignParentStart="true" android:layout_alignParentTop="true"
-                android:layout_marginTop="24dp" android:layout_marginStart="10dp"/>
+                android:layout_marginTop="24dp" android:layout_marginStart="25dp" android:textSize="30dp"/>
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp" app:srcCompat="@android:drawable/ic_popup_reminder"

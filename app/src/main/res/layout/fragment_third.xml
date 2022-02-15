@@ -14,7 +14,7 @@
             android:background="#000000"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="528dp" android:layout_marginStart="18dp"/>
+            android:layout_marginTop="530dp" android:layout_marginStart="18dp"/>
     <View
             android:id="@+id/splitLine_hor4"
             android:layout_width="380dp"
@@ -22,7 +22,7 @@
             android:background="#000000"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="432dp" android:layout_marginStart="18dp"/>
+            android:layout_marginTop="430dp" android:layout_marginStart="18dp"/>
     <View
             android:id="@+id/splitLine_hor3"
             android:layout_width="380dp"
@@ -30,7 +30,7 @@
             android:background="#000000"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="332dp" android:layout_marginStart="16dp"/>
+            android:layout_marginTop="330dp" android:layout_marginStart="16dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/txProfilenadimak"
@@ -57,48 +57,49 @@
             app:civ_border_color="#FFEF2719"
             app:layout_constraintHorizontal_bias="0.497"/>
 
-
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="74dp" tools:layout_editor_absoluteX="1dp"
+            android:layout_height="74dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="1dp"
             android:id="@+id/onClickPretplata" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="258dp">
+            android:layout_marginTop="260dp">
 
-        <TextView
-                android:text="Pretplata"
-                android:textColor="@drawable/text_selector"
-                android:layout_width="140dp"
-                android:layout_height="37dp"
-                android:scaleX="2" android:scaleY="2"
-                android:gravity="center"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true" android:layout_marginTop="19dp" android:layout_marginStart="23dp"
-        />
         <TextView
                 android:text="Aktiviraj"
                 android:textColor="#FF3C3C"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/textView19"
                 android:layout_alignParentTop="true" android:layout_marginTop="31dp"
-                android:layout_alignParentEnd="true" android:layout_marginEnd="16dp"/>
+                android:layout_alignParentEnd="true" android:layout_marginEnd="26dp"/>
+        <TextView
+                android:text="Pretplata"
+                android:textColor="@drawable/text_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_marginBottom="18dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="24dp" android:layout_marginTop="18dp"/>
     </RelativeLayout>
     <RelativeLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="74dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="361dp">
+            android:layout_marginTop="360dp">
 
         <TextView
                 android:text="Pomoć"
                 android:textColor="@drawable/text_selector"
-                android:layout_width="79dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/textView18"
-                android:scaleX="2" android:scaleY="2"
-                android:translationX="4dp"
                 android:gravity="center"
-                android:layout_alignParentBottom="true" android:layout_marginBottom="25dp"
-                android:layout_alignParentStart="true" android:layout_marginStart="33dp"/>
+                android:layout_alignParentBottom="true" android:layout_marginBottom="18dp"
+                android:layout_alignParentStart="true" android:layout_marginStart="24dp" android:textSize="30sp"/>
         <ImageView
                 android:layout_width="37dp"
                 android:layout_height="37dp" app:srcCompat="@android:drawable/ic_menu_help"
@@ -107,21 +108,12 @@
                 android:layout_alignParentEnd="true" android:layout_marginEnd="24dp"/>
     </RelativeLayout>
     <RelativeLayout
-            android:layout_width="414dp"
-            android:layout_height="77dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="453dp" android:id="@+id/onClickSetting">
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="460dp" android:id="@+id/onClickSetting">
 
-        <TextView
-                android:text="Postavke"
-                android:textColor="@drawable/text_selector"
-                android:layout_width="118dp"
-                android:layout_height="wrap_content"
-                android:scaleX="2" android:scaleY="2"
-                android:gravity="center"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentBottom="true" android:layout_marginBottom="24dp"
-                android:layout_marginStart="36dp"/>
         <ImageView
                 android:layout_width="37dp"
                 android:layout_height="37dp" app:srcCompat="@android:drawable/ic_menu_manage"
@@ -129,8 +121,16 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="15dp" android:layout_alignParentEnd="true"
                 android:layout_marginEnd="22dp"/>
-    </RelativeLayout>
+        <TextView
+                android:text="Postavke"
+                android:textColor="@drawable/text_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
 
+                android:layout_alignParentBottom="true" android:layout_alignParentStart="true"
+                android:layout_marginBottom="18dp" android:layout_marginStart="24dp" android:gravity="center"/>
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

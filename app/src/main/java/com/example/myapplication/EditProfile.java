@@ -143,6 +143,7 @@ public class EditProfile extends AppCompatActivity {
                     }
                 }
             });
+
         } catch (IOException e) {
             e.printStackTrace();
         }
