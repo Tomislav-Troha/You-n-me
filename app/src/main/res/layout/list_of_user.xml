@@ -3,25 +3,40 @@
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
-                                                   android:layout_height="200dp" android:background="#292828"
-                                                   android:layout_margin="10dp" android:elevation="5dp">
+                                                   android:layout_height="wrap_content"
+                                                   android:layout_margin="10dp"
+>
 
-    <TextView
-            android:text="Ime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="24dp"
-            android:layout_marginStart="220dp" android:id="@+id/txImeUser" android:textSize="30sp"/>
-    <TextView
-            android:text="Godina"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="80dp"
-            android:layout_marginStart="220dp" android:id="@+id/txGodinaUser" android:textSize="30sp"/>
-    <ImageView
-            android:layout_width="170dp"
-            android:layout_height="154dp" tools:srcCompat="@tools:sample/avatars"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:id="@+id/imgUser" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="20dp" app:layout_constraintHorizontal_bias="0.107"/>
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp" android:backgroundTint="#353131" app:layout_constraintTop_toTopOf="parent">
+        <TextView
+                android:text="Ime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="220dp" android:id="@+id/txImeUsername" android:textSize="30sp"
+                android:textColor="#FFFFFF"/>
+        <TextView
+                android:text="Godina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:layout_marginStart="220dp" android:id="@+id/txGodinaUser" android:textSize="30sp"
+                android:textColor="#FFFFFF"/>
+        <ImageView
+                android:layout_width="182dp"
+                android:layout_height="185dp" tools:srcCompat="@tools:sample/avatars"
+                android:id="@+id/imgUser"
+                android:layout_marginTop="10dp" android:layout_marginStart="10dp" android:layout_marginBottom="10dp"/>
+        <TextView
+                android:text="Vidi više.."
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="170dp"
+                android:layout_marginStart="250dp" android:id="@+id/txVidiVise" android:textSize="20sp"
+                android:textColor="#FFFFFF"/>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

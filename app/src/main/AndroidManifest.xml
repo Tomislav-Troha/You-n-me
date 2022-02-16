@@ -66,7 +66,8 @@
                 android:name=".login_register.Choose">
         </activity>
         <activity
-                android:name=".home.HomePage">
+                android:name=".home.HomePage"
+                android:theme="@style/Theme.AppCompat.DayNight">
         </activity>
         <activity
                 android:name=".login_register.LoginPage">
@@ -80,6 +81,10 @@
                 android:name=".EditProfile"
                 android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
                 android:label="Uredi profil">
+        </activity>
+
+        <activity
+                android:name=".user_profile.ProfileofUsers">
         </activity>
 
 
