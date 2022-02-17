@@ -37,7 +37,7 @@
             app:layout_constraintHorizontal_bias="0.0">
 
         <TextView
-                android:text="Odjava"
+                android:text="@string/odjavaa"
                 android:textColor="#F63535"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="200dp">
 
         <TextView
-                android:text="Promjena lozinke"
+                android:text="@string/promjenaLozinke"
                 android:clickable="true"
                 android:textColor="@drawable/text_selector"
                 android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
             android:layout_marginTop="120dp">
 
         <TextView
-                android:text="Upravljanje računom"
+                android:text="@string/upravljanjeRacunom"
                 android:clickable="true"
                 android:textColor="@drawable/text_selector"
                 android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
             android:layout_marginTop="40dp">
 
         <TextView
-                android:text="Obavijesti"
+                android:text="@string/obavjesti"
                 android:clickable="true"
                 android:textColor="@drawable/text_selector"
                 android:layout_width="wrap_content"

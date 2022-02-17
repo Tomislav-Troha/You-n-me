@@ -73,14 +73,14 @@
                 android:name=".login_register.LoginPage">
         </activity>
         <activity
-                android:name=".Setting"
+                android:name=".settings.Setting"
                 android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-                android:label="Postavke">
+                android:label="@string/postavke">
         </activity>
         <activity
-                android:name=".EditProfile"
+                android:name=".settings.EditProfile"
                 android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
-                android:label="Uredi profil">
+                android:label="@string/urediProfil">
         </activity>
 
         <activity

@@ -9,28 +9,39 @@ public class Cards {
     private Bitmap img;
     private String username;
     private String objectId;
+    private String aboutPartner;
+    private String aboutYou;
 
     public Cards(String username, Bitmap img) {
         this.img = img;
         this.username = username;
-       // this.objectId = objectID;
+    }
 
+  /*  public Cards (String aboutPartner, String aboutYou) {
+        this.aboutPartner = aboutPartner;
+        this.aboutYou = aboutYou;
+    }*/
+
+
+    public String getAboutYou() {
+        return aboutYou;
+    }
+    public void setAboutYou(String aboutYou) {
+        this.aboutYou = aboutYou;
     }
 
 
-    public String getObjectID() {
-        return objectId;
+    public String getAboutPartner() {
+        return aboutPartner;
     }
-
-    public void getObjectID(String objectId) {
-        this.objectId = objectId;
+    public void setAboutPartner(String aboutPartner) {
+        this.aboutPartner = aboutPartner;
     }
 
 
     public String getIme() {
         return ime;
     }
-
     public void setIme(String ime) {
         this.ime = ime;
     }
@@ -39,7 +50,6 @@ public class Cards {
     public Bitmap getImg() {
         return img;
     }
-
     public void setImg(Bitmap img) {
         this.img = img;
     }
@@ -48,7 +58,6 @@ public class Cards {
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }

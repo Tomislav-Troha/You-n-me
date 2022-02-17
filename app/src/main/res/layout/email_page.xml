@@ -42,28 +42,28 @@
            app:layout_constraintStart_toStartOf="@+id/textView2" android:layout_marginTop="2dp"
            app:layout_constraintTop_toBottomOf="@+id/textView2"/>
    <TextView
-           android:text="Nadimak"
+           android:text="@string/nadimak"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content" android:id="@+id/textView2"
            tools:ignore="MissingConstraints"
            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
            android:layout_marginTop="128dp" android:layout_marginStart="96dp"/>
    <TextView
-           android:text="Lozinka"
+           android:text="@string/lozinka"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content" android:id="@+id/textView5"
            tools:ignore="MissingConstraints"
            app:layout_constraintStart_toStartOf="@+id/editEmail" android:layout_marginTop="24dp"
            app:layout_constraintTop_toBottomOf="@+id/editEmail"/>
    <TextView
-           android:text="E-mail"
+           android:text="@string/email"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content" android:id="@+id/textView3"
            tools:ignore="MissingConstraints"
            app:layout_constraintStart_toStartOf="@+id/editNadimak" android:layout_marginTop="20dp"
            app:layout_constraintTop_toBottomOf="@+id/editNadimak"/>
    <Button
-           android:text="Potvrdi"
+           android:text="@string/potvrdi"
            android:layout_width="157dp"
            android:layout_height="48dp" android:id="@+id/potvrdiButton"
            app:layout_constraintStart_toStartOf="parent"

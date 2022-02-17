@@ -10,17 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import com.example.myapplication.EditProfile;
+import com.example.myapplication.settings.EditProfile;
 import com.example.myapplication.R;
-import com.example.myapplication.Setting;
-import com.example.myapplication.login_register.Choose;
+import com.example.myapplication.settings.Setting;
 import com.parse.*;
-
-import java.time.Year;
-import java.util.Calendar;
 
 public class ThirdFragment extends Fragment {
 
@@ -91,7 +86,7 @@ public class ThirdFragment extends Fragment {
                     goToEdit.setImageBitmap(bitmap);
                 }
                 else {
-                    Toast.makeText(ThirdFragment.this.getActivity(), "opet nis od slike", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ThirdFragment.this.getActivity(), "Error", Toast.LENGTH_LONG).show();
                 }
             });
         } else {
@@ -102,7 +97,7 @@ public class ThirdFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Profil");
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.profil));
     }
     @Override
     public void onStop() {

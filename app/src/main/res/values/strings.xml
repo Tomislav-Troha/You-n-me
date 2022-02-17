@@ -1,20 +1,81 @@
 <resources>
     <string name="app_name">You \'n Me</string>
-    <string name="back4app_server_url">https://parseapi.back4app.com</string>
+    <string name="back4app_server_url" translatable="false">https://parseapi.back4app.com</string>
 
     <!-- Paste BOTH strings as required -->
-    <string name="back4app_app_id">y5N7tWF7NOAHGXUfSjkGHTOzZSJdoRxnQfvNs3P4</string>
-    <string name="back4app_client_key">7zxbe7pW3vIqPa1DI4dAEicVRJGVMljtNUtXKwPG</string>
-    <string name="bottom_nav_menu">bottom_nav_menu</string>
+    <string name="back4app_app_id" translatable="false">y5N7tWF7NOAHGXUfSjkGHTOzZSJdoRxnQfvNs3P4</string>
+    <string name="back4app_client_key" translatable="false">7zxbe7pW3vIqPa1DI4dAEicVRJGVMljtNUtXKwPG</string>
+    <string name="bottom_nav_menu" translatable="false">bottom_nav_menu</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="person">Person</string>
-    <string name="home">Home</string>
-    <string name="settings">Settings</string>
-    <string name="Home">Home</string>
-    <string name="Chat">Chat</string>
-    <string name="Profil">Profil</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="person" translatable="false">Person</string>
+    <string name="home" translatable="false">Home</string>
+    <string name="settings" translatable="false">Settings</string>
+    <string name="Home" translatable="false">Home</string>
+    <string name="Chat" translatable="false">Chat</string>
+    <string name="Profil" translatable="false">Profil</string>
 
     <string name="action_settings">Spremi</string>
+
+
+    <string name="pridruziSe">Pridruži se</string>
+    <string name="tvojSvijetTvojaLjubac">Tvoj svijet. Tvoja ljubav.</string>
+    <string name="prijaviSe">Prijavi se</string>
+    <string name="email">Email</string>
+    <string name="lozinka">Lozinka</string>
+    <string name="prijava">Prijava</string>
+    <string name="pronadiSvojSpol">Pronađi svoj spoj</string>
+    <string name="tiSi">Ti si</string>
+    <string name="trazis">Tražis</string>
+    <string name="dalje">Dalje</string>
+    <string name="nadimak">Nadimak</string>
+    <string name="potvrdi">Potvrdi</string>
+    <string name="regUpsijesna">Registracija uspiješna</string>
+    <string name="loginUpsijesan">Prijava uspiješan</string>
+    <string name="morasNadimak">Moras unijeti nadimak!</string>
+    <string name="ispuniteSvaPolja">Ispunite sve polja</string>
+    <string name="emailObavzan">Email je obavezan</string>
+    <string name="lozinkaObavezna">Lozinka je obavezna</string>
+    <string name="trazimZenu">Ženu</string>
+    <string name="trazimMuskarca">Muškarca</string>
+    <string name="tiSiZena">Žena</string>
+    <string name="tiSiMuskarac">Muškarac</string>
+    <string name="podaciSpremljeni">Podaci spremljeni</string>3
+    <string name="dosloJeDoGreske">Doslo je do greske</string>
+    <string name="profilNijePronaden">Profili nisu pronadeni</string>
+    <string name="slikaUploadana">Slika učitana</string>
+    <string name="uspijesnoAzurirano">Uspijesno azurirano</string>
+    <string name="spremi">Spremi</string>
+    <string name="odustani">Odustani</string>
+    <string name="odaberiSpol">Odaberi spol</string>
+    <string name="trazim">Tražim</string>
+    <string name="odjava">Odjavljeni ste</string>
+    <string name="odjavaa">Odjava</string>
+    <string name="promjenaLozinke">Promjena lozinke</string>
+    <string name="upravljanjeRacunom">Upravljanje računom</string>
+    <string name="obavjesti">Obavijesti</string>
+    <string name="vidiVise">Vidi više..</string>
+    <string name="aktiviraj">Aktiviraj</string>
+    <string name="pretplata">Pretplata</string>
+    <string name="pomoc">Pomoć</string>
+    <string name="postavke">Postavke</string>
+    <string name="ime">Ime</string>
+    <string name="slike">Slike</string>
+    <string name="profil">Profil</string>
+    <string name="urediProfil">Uredi profil</string>
+    <string name="parRijeciPartneru">Par riječi o svom idealnom partneru…</string>
+    <string name="parRijeci_o_Sebi">Par riječi o sebi</string>
+    <string name="oSebi">O SEBI</string>
+    <string name="osobniPodaci">Osobni podaci</string>
+    <string name="datumRodena">Datum rođenja</string>
+    <string name="spol">Spol</string>
+    <string name="zelimUpoznati">Želim upoznati</string>
+    <string name="klikniZaVise">Klik za odabir</string>
+    <string name="izmeduGodina">Između godina</string>
+    <string name="_od">Od</string>
+    <string name="_do">DO</string>
+
+
+
 
 </resources>

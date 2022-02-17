@@ -6,7 +6,7 @@
                                                    android:layout_height="match_parent">
 
     <TextView
-            android:text="Ti si"
+            android:text="@string/tiSi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView4"
             android:scaleX="2" android:scaleY="2"
@@ -14,7 +14,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/trazisView"
             android:layout_marginStart="88dp" app:layout_constraintVertical_bias="0.0"/>
     <TextView
-            android:text="Tražiš"
+            android:text="@string/trazis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/trazisView"
             android:scaleX="2" android:scaleY="2"
@@ -44,14 +44,14 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="249dp" android:layout_marginEnd="310dp"
             app:layout_constraintEnd_toEndOf="parent"/>
     <Button
-            android:text="Dalje"
+            android:text="@string/dalje"
             android:layout_width="145dp"
             android:layout_height="49dp" android:id="@+id/buttonDalje"
             android:backgroundTint="@android:color/holo_red_dark"
             app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="352dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="132dp"/>
     <TextView
-            android:text="Pronađi svoj spoj"
+            android:text="@string/pronadiSvojSpol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView9"
             android:scaleX="3" android:scaleY="3"

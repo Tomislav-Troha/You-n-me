@@ -29,11 +29,11 @@ public class JoinUsPage extends AppCompatActivity  {
         setContentView(com.example.myapplication.R.layout.email_page);
 
 
-        submitBtn = (Button) findViewById(com.example.myapplication.R.id.potvrdiButton);
+        submitBtn = findViewById(com.example.myapplication.R.id.potvrdiButton);
 
-        nadimak = (EditText) findViewById(com.example.myapplication.R.id.editNadimak);
-        email = (EditText) findViewById(com.example.myapplication.R.id.editEmail);
-        lozinka = (EditText) findViewById(R.id.editLozinka);
+        nadimak =  findViewById(com.example.myapplication.R.id.editNadimak);
+        email =  findViewById(com.example.myapplication.R.id.editEmail);
+        lozinka =  findViewById(R.id.editLozinka);
 
         onClickSubmit();
     }
@@ -54,7 +54,7 @@ public class JoinUsPage extends AppCompatActivity  {
                         @Override
                         public void done(ParseException e) {
                             if(e == null) {
-                                Toast.makeText(getApplicationContext(), "Registracija uspjesna", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.regUpsijesna), Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(JoinUsPage.this, Choose.class));
                                 finish();
                             }else {
@@ -65,18 +65,18 @@ public class JoinUsPage extends AppCompatActivity  {
                 }
 
                 if(isEmpty(nadimak)){
-                    Toast t = Toast.makeText(JoinUsPage.this, "Moras unijeti nadimak!", Toast.LENGTH_SHORT);
+                    Toast t = Toast.makeText(JoinUsPage.this, getString(R.string.ispuniteSvaPolja), Toast.LENGTH_SHORT);
                     t.show();
-                    nadimak.setError("Ispunite sve polja");
+                    nadimak.setError(getString(R.string.morasNadimak));
                 }
 
 
                 if(isEmpty(email)){
-                    email.setError("Email je obavezan");
+                    email.setError(getString(R.string.emailObavzan));
                 }
 
                 if(isEmpty(lozinka)){
-                    lozinka.setError("Lozinka je obavezna");
+                    lozinka.setError(getString(R.string.lozinkaObavezna));
                 }
             }
         });

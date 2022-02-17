@@ -53,14 +53,14 @@
             android:layout_marginTop="260dp">
 
         <TextView
-                android:text="Aktiviraj"
+                android:text="@string/aktiviraj"
                 android:textColor="#FF3C3C"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/textView19"
                 android:layout_alignParentTop="true" android:layout_marginTop="31dp"
                 android:layout_alignParentEnd="true" android:layout_marginEnd="26dp"/>
         <TextView
-                android:text="Pretplata"
+                android:text="@string/pretplata"
                 android:textColor="@drawable/text_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
             android:layout_marginTop="360dp">
 
         <TextView
-                android:text="Pomoć"
+                android:text="@string/pomoc"
                 android:textColor="@drawable/text_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/textView18"
@@ -109,7 +109,7 @@
                 android:layout_marginBottom="15dp" android:layout_alignParentEnd="true"
                 android:layout_marginEnd="22dp"/>
         <TextView
-                android:text="Postavke"
+                android:text="@string/postavke"
                 android:textColor="@drawable/text_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

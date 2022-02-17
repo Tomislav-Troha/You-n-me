@@ -26,11 +26,11 @@ public class LoginPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_page);
 
-        btnLogin = (Button) findViewById(R.id.onClickLogin);
+        btnLogin = findViewById(R.id.onClickLogin);
 
 
-        email = (EditText) findViewById(R.id.editLoginEmail);
-        lozinka = (EditText) findViewById(R.id.editLoginPassword);
+        email =  findViewById(R.id.editLoginEmail);
+        lozinka =  findViewById(R.id.editLoginPassword);
 
         loginOnClick();
 
@@ -53,7 +53,7 @@ public class LoginPage extends AppCompatActivity {
                         @Override
                         public void done(ParseUser user, ParseException e) {
                             if(user != null){
-                                Toast.makeText(getApplicationContext(), "Login uspiješan", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), getString(R.string.loginUpsijesan), Toast.LENGTH_LONG).show();
                                 startActivity(new Intent(LoginPage.this, HomePage.class));
                                 finish();
                             }else {

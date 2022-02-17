@@ -24,21 +24,21 @@
             android:layout_marginTop="306dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="99dp"/>
     <TextView
-            android:text="Email"
+            android:text="@string/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView11"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="202dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="99dp"/>
     <TextView
-            android:text="Lozinka"
+            android:text="@string/lozinka"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView13"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="287dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="99dp"/>
     <Button
-            android:text="Prijava"
+            android:text="@string/prijava"
             android:layout_width="138dp"
             android:layout_height="46dp" android:id="@+id/onClickLogin"
             app:layout_constraintTop_toTopOf="parent"
@@ -57,10 +57,8 @@
             android:layout_marginTop="445dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="87dp"/>
     <TextView
-            android:text="Prijava"
-            android:layout_width="wrap_content"
+            android:text="@string/prijava"
             android:layout_height="wrap_content" android:id="@+id/textView14"
-            android:scaleX="2.5" android:scaleY="2.5"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="121dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="184dp"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="112dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="152dp" android:textSize="34sp" android:layout_width="wrap_content"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

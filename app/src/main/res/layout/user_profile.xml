@@ -24,7 +24,7 @@
                     android:layout_height="700dp" android:layout_width="match_parent">
 
                 <TextView
-                        android:text="Ime"
+                        android:text="@string/ime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/userIme"
                         android:layout_alignParentStart="true" android:layout_marginStart="8dp"
@@ -34,7 +34,7 @@
                         android:layout_width="380dp"
                         android:layout_height="113dp" android:layout_alignParentStart="true"
                         android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="532dp" android:id="@+id/textView29" android:textSize="17sp"/>
+                        android:layout_marginBottom="532dp" android:id="@+id/txAboutYou" android:textSize="17sp"/>
                 <TextView
                         android:text="22 - 24 godine"
                         android:layout_width="wrap_content"
@@ -52,9 +52,9 @@
                         android:layout_width="380dp"
                         android:layout_height="123dp" android:layout_alignParentStart="true"
                         android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="344dp" android:id="@+id/textView33" android:textSize="17sp"/>
+                        android:layout_marginBottom="344dp" android:id="@+id/txAboutPartner" android:textSize="17sp"/>
                 <TextView
-                        android:text="Tražim"
+                        android:text="@string/trazim"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:layout_alignParentStart="true"
                         android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
@@ -66,7 +66,7 @@
                         app:layout_constraintStart_toStartOf="parent" android:id="@+id/imageView26"
                         android:layout_alignParentStart="true" android:layout_marginStart="139dp"/>
                 <TextView
-                        android:text="Slike"
+                        android:text="@string/slike"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent" android:id="@+id/textView34"

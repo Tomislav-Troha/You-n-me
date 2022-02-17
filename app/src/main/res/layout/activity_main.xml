@@ -17,7 +17,7 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintVertical_bias="0.237"/>
     <TextView
-            android:text="Tvoj svijet. Tvoja ljubav."
+            android:text="@string/tvojSvijetTvojaLjubac"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/textView8"
             android:scaleX="1" android:scaleY="1"
@@ -25,7 +25,7 @@
             android:layout_marginTop="302dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="130dp"/>
     <Button
-            android:text="Pridruži se"
+            android:text="@string/pridruziSe"
             android:layout_width="238dp"
             android:layout_height="59dp" android:id="@+id/JoinButton"
             android:backgroundTint="@android:color/holo_red_dark" app:cornerRadius="18dp"
@@ -33,13 +33,13 @@
             android:layout_marginTop="496dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="84dp"/>
     <TextView
-            android:text="Prijavi se"
+            android:text="@string/prijaviSe"
             android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" android:id="@+id/txPrijava"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="592dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="172dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="60dp"/>
     <ImageView
             android:layout_width="520dp"
             android:layout_height="437dp" app:srcCompat="@mipmap/ic_launcher_foreground"

@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        mybtn = (Button) findViewById(R.id.JoinButton);
+        mybtn =  findViewById(R.id.JoinButton);
 
-        btnPrijaviSe = (TextView)findViewById(R.id.txPrijava);
+        btnPrijaviSe = findViewById(R.id.txPrijava);
 
         onbtnClick();
 

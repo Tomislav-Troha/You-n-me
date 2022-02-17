@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.myapplication.login_register.Choose;
-import com.example.myapplication.login_register.JoinUsPage;
+import com.example.myapplication.R;
 import com.example.myapplication.login_register.MainActivity;
 import com.parse.ParseUser;
 
@@ -54,7 +53,7 @@ public class Setting extends AppCompatActivity {
     public void logOutUser() {
         if (ParseUser.getCurrentUser() != null) {
             ParseUser.logOut();
-            Toast.makeText(Setting.this, "Odjavljeni ste", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Setting.this, getString(R.string.odjava), Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Setting.this, MainActivity.class));
                 } else { // user is out
                 }

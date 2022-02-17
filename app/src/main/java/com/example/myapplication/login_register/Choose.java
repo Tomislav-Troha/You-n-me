@@ -37,44 +37,44 @@ public class Choose extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose);
 
-        youFemale = (ImageButton) findViewById(R.id.youAreFemale);
-        youMale = (ImageButton) findViewById(R.id.youAreMale);
+        youFemale =  findViewById(R.id.youAreFemale);
+        youMale =  findViewById(R.id.youAreMale);
 
-        lookFemale = (ImageButton) findViewById(R.id.lookForFemale);
-        lookMale = (ImageButton) findViewById(R.id.lookForMale);
+        lookFemale =  findViewById(R.id.lookForFemale);
+        lookMale =  findViewById(R.id.lookForMale);
 
-        txtiSi = (TextView) findViewById(R.id.tiSi);
-        txTrazis = (TextView) findViewById(R.id.trazis);
+        txtiSi =  findViewById(R.id.tiSi);
+        txTrazis =  findViewById(R.id.trazis);
 
-        dalje = (Button) findViewById(R.id.buttonDalje);
+        dalje =  findViewById(R.id.buttonDalje);
 
 
 
         youFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtiSi.setText("Žena".toString());
+                txtiSi.setText(getString(R.string.tiSiZena));
             }
         });
 
         youMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtiSi.setText("Muškarac".toString());
+                txtiSi.setText(getString(R.string.tiSiMuskarac));
             }
         });
 
         lookFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txTrazis.setText("Ženu".toString());
+                txTrazis.setText(getString(R.string.trazimZenu));
             }
         });
 
         lookMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txTrazis.setText("Muškarca".toString());
+                txTrazis.setText(getString(R.string.trazimMuskarca));
             }
         });
 
@@ -109,7 +109,7 @@ public class Choose extends AppCompatActivity {
             public void done(ParseException e) {
                 if (e == null) {
                     // your object is successfully created.
-                    Toast.makeText(getApplicationContext(), "Podaci spremljeni", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), getString(R.string.podaciSpremljeni), Toast.LENGTH_LONG).show();
                     startActivity(new Intent(Choose.this, HomePage.class));
                     finish();
                 } else {

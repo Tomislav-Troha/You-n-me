@@ -2,6 +2,7 @@ package com.example.myapplication.home;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -41,11 +42,8 @@ public class FirstFragment extends Fragment {
         getCards();
 
 
-
-
         return view;
     }
-
 
 
     public void getCards() {
@@ -58,6 +56,7 @@ public class FirstFragment extends Fragment {
             for(ParseObject object:objects){
 
                 ParseFile imageFile = (ParseFile) object.get("Profil_image");
+
 
                 if (imageFile != null) {
                     imageFile.getDataInBackground((data, e1) -> {
@@ -72,14 +71,16 @@ public class FirstFragment extends Fragment {
                             listView.setLayoutManager(new LinearLayoutManager(FirstFragment.this.getActivity()));
                             adapter = new Adapter(FirstFragment.this.getActivity(), arrayList);
                             listView.setAdapter(adapter);
+
                         }
                         else {
-                            Toast.makeText(FirstFragment.this.getActivity(), "Doslo je do greske", Toast.LENGTH_LONG).show();
+                            Toast.makeText(FirstFragment.this.getActivity(), getString(R.string.dosloJeDoGreske), Toast.LENGTH_SHORT).show();
                         }
                     });
                 } else {
-                    Toast.makeText(FirstFragment.this.getActivity(), "Profili nisu pronadeni", Toast.LENGTH_LONG).show();
+                    Toast.makeText(FirstFragment.this.getActivity(), getString(R.string.profilNijePronaden), Toast.LENGTH_SHORT).show();
                 }
+
             }
 
         });

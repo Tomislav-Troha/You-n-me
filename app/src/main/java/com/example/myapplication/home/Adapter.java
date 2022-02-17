@@ -49,6 +49,8 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
             Intent intent = new Intent(context, ProfileofUsers.class);
             intent.putExtra("username", data.get(position).getUsername());
             intent.putExtra("profileImage", data.get(position).getImg());
+            intent.putExtra("About_partner", data.get(position).getAboutPartner());
+            intent.putExtra("About_you", data.get(position).getAboutYou());
             context.startActivity(intent);
             //data.get(position).getObjectID()
         });
