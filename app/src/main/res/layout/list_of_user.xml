@@ -19,13 +19,6 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginStart="220dp" android:id="@+id/txImeUsername" android:textSize="30sp"
                 android:textColor="#FFFFFF"/>
-        <TextView
-                android:text="Godina"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
-                android:layout_marginStart="220dp" android:id="@+id/txGodinaUser" android:textSize="30sp"
-                android:textColor="#FFFFFF"/>
         <ImageView
                 android:layout_width="182dp"
                 android:layout_height="185dp" tools:srcCompat="@tools:sample/avatars"
@@ -36,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="170dp"
-                android:layout_marginStart="250dp" android:id="@+id/txVidiVise" android:textSize="20sp"
-                android:textColor="#FFFFFF"/>
+                android:layout_marginStart="200dp" android:id="@+id/txVidiVise" android:textSize="20sp"
+                android:textColor="#FFFFFF" android:layout_marginEnd="50dp"/>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

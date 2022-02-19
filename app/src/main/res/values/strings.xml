@@ -15,7 +15,8 @@
     <string name="Chat" translatable="false">Chat</string>
     <string name="Profil" translatable="false">Profil</string>
 
-    <string name="action_settings">Spremi</string>
+    <string name="action_settings_edit">Uredi</string>
+    <string name="action_settings_save">Spremi</string>
 
 
     <string name="pridruziSe">Pridruži se</string>
@@ -74,6 +75,8 @@
     <string name="izmeduGodina">Između godina</string>
     <string name="_od">Od</string>
     <string name="_do">DO</string>
+    <string name="prikazNaProfiluAlert">Moraš odabrati sliku ako želiš biti prikazan drugim osobama</string>
+    <string name="godina">Godina</string>
 
 
 

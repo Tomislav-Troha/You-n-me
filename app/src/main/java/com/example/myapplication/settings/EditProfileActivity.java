@@ -146,43 +146,7 @@ public class EditProfileActivity extends EditProfile {
 
     public void editNameOfUser(String ime, Context context) {
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
-        query.whereEqualTo("User_email", ParseUser.getCurrentUser().getEmail());
 
-        query.getFirstInBackground(new GetCallback<ParseObject>() {
-            @Override
-            public void done(ParseObject object, ParseException e) {
-                String objectID = "";
-                if(e == null){
-                    objectID = object.getObjectId();
-
-                    query.getInBackground(objectID, new GetCallback<ParseObject>() {
-                        @Override
-                        public void done(ParseObject object, ParseException e) {
-                            if(e == null){
-                                object.put("Ime", ime);
-
-                                object.saveInBackground(new SaveCallback() {
-                                    @Override
-                                    public void done(ParseException e) {
-                                        if (e == null) {
-                                            Toast.makeText(context, context.getString(com.example.myapplication.R.string.uspijesnoAzurirano), Toast.LENGTH_SHORT).show();
-                                        }
-                                        else {
-                                            Toast.makeText(context, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                            } else {
-                                Toast.makeText(context, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                } else {
-                    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
     public void editPickSexForMeeting(String spol, Context context) {

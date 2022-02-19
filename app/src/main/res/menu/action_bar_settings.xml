@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/spremi"
-          android:title="@string/action_settings"
-          app:showAsAction="never"/>
+    <item android:id="@+id/edit"
+          android:title="@string/action_settings_edit"
+          android:icon="@mipmap/pen_foreground"
+          app:showAsAction="always"/>
+
+    <item android:id="@+id/save"
+          android:title="@string/action_settings_save"
+          android:icon="@mipmap/tick_foreground"
+          app:showAsAction="always"/>
 </menu>

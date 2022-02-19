@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">You \'n Me</string>
-    <string name="action_settings">Save</string>
+    <string name="action_settings">Edit</string>
     <string name="pridruziSe">Join us</string>
     <string name="tvojSvijetTvojaLjubac">Your world. Your love.</string>
     <string name="prijaviSe">Login</string>
@@ -58,4 +58,8 @@
     <string name="izmeduGodina">Between ages</string>
     <string name="_od">From</string>
     <string name="_do">To</string>
+    <string name="prikazNaProfiluAlert">" You must select a picture if you want to be shown to other people"</string>
+    <string name="godina">years old</string>
+    <string name="action_settings_edit">Edit</string>
+    <string name="action_settings_save">Save</string>
 </resources>

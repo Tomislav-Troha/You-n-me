@@ -44,13 +44,15 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.img.setImageBitmap(data.get(position).getImg());
 
 
-
-        holder.clickForMore.setOnClickListener(view -> {
+        holder.itemView.setOnClickListener(view -> {
             Intent intent = new Intent(context, ProfileofUsers.class);
             intent.putExtra("username", data.get(position).getUsername());
             intent.putExtra("profileImage", data.get(position).getImg());
             intent.putExtra("About_partner", data.get(position).getAboutPartner());
             intent.putExtra("About_you", data.get(position).getAboutYou());
+            intent.putExtra("User_traziSpol", data.get(position).getTraziSpol());
+            intent.putExtra("godine_od", data.get(position).getGodine_od());
+            intent.putExtra("godine_do", data.get(position).getGodine_do());
             context.startActivity(intent);
             //data.get(position).getObjectID()
         });
@@ -67,7 +69,7 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     public class ViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView username, godine;
+        TextView username;
         ImageView img;
         TextView clickForMore;
 
@@ -77,14 +79,12 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.txImeUsername);
-            godine = itemView.findViewById(R.id.txGodinaUser);
             img = itemView.findViewById(R.id.imgUser);
 
             clickForMore = itemView.findViewById(R.id.txVidiVise);
 
-            context = clickForMore.getContext();
-            clickForMore.setClickable(true);
-            clickForMore.setOnClickListener(this);
+
+            context = itemView.getContext();
 
 
         }

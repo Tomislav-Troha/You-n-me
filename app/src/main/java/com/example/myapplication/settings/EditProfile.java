@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,10 +15,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
+import com.example.myapplication.home.FirstFragment;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.parse.*;
 import java.io.ByteArrayOutputStream;
@@ -37,7 +40,6 @@ public class EditProfile extends AppCompatActivity {
     private int mYear, mMonth, mDay;
 
     TextView txSpol;
-    TextView txDatum;
 
     EditText username;
 
@@ -45,7 +47,8 @@ public class EditProfile extends AppCompatActivity {
 
     RelativeLayout openEditIme;
 
-    EditText onClickTrazimSpol;
+    RelativeLayout onClickTrazimSpol;
+    TextView txTraziSpol;
     EditText onClickIzmeduGodina;
 
     EditText godinaOd;
@@ -58,6 +61,8 @@ public class EditProfile extends AppCompatActivity {
 
     EditText editTxAboutYou;
     ImageView saveAboutYou;
+
+    private Menu action;
 
 
     @Override
@@ -77,6 +82,8 @@ public class EditProfile extends AppCompatActivity {
         onClickTrazimSpol = findViewById(com.example.myapplication.R.id.onClickTrazimSpol);
         saveYears = findViewById(com.example.myapplication.R.id.savePickYears);
 
+        txTraziSpol = findViewById(R.id.txtraziSpol);
+
         editTxAboutPartner = findViewById(R.id.editTxAboutPartner);
         saveAboutPartner = findViewById(R.id.saveAboutPartner);
 
@@ -84,6 +91,7 @@ public class EditProfile extends AppCompatActivity {
         saveAboutYou = findViewById(R.id.saveAboutYou);
 
 
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         //dohacanje podataka o useru
           getUserData();
@@ -95,10 +103,10 @@ public class EditProfile extends AppCompatActivity {
           openPopupEditBirthdate();
 
         //otvora alert za edit imena; lambda izraz, ne lose
-         txIme.setOnClickListener(view -> openPopupEditName());
+         //txIme.setOnClickListener(view -> openPopupEditName());
 
          //otvara alert za edit nadimka
-         username.setOnClickListener(view -> openPopupEditUsername());
+         //username.setOnClickListener(view -> openPopupEditUsername());
 
          //dohvaca profilnu sliku
            getProfileImageOfUser();
@@ -119,18 +127,56 @@ public class EditProfile extends AppCompatActivity {
             saveAboutYou();
 
 
+        openPopupDatum.setEnabled(false);
+        openPopupDatum.setFocusableInTouchMode(false);
+        openPopupDatum.setFocusable(false);
+
+        openPopupSpol.setEnabled(false);
+        openPopupSpol.setFocusableInTouchMode(false);
+        openPopupSpol.setFocusable(false);
+
+        onClickTrazimSpol.setEnabled(false);
+        onClickTrazimSpol.setFocusableInTouchMode(false);
+        onClickTrazimSpol.setFocusable(false);
+
+
         //otvara library za odabir slike iz galerije ili fotoaparat
         btnOpenDialog = findViewById(com.example.myapplication.R.id.imgBtnOpenDialog);
-        btnOpenDialog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ImagePicker.Companion.with(EditProfile.this)
-                        .cropSquare()
-                        .compress(1024)
-                        .maxResultSize(350, 200)
-                        .start();
-            }
-        });
+
+       // Toast.makeText(EditProfile.this, btnOpenDialog.getDrawable().toString(), Toast.LENGTH_LONG).show();
+
+       // Bitmap bm = ((BitmapDrawable) btnOpenDialog.getDrawable()).getBitmap();
+
+        //Bitmap icon = BitmapFactory.decodeResource(EditProfile.this.getResources(),
+               // R.drawable.avatar);
+
+
+       // Log.e(btnOpenDialog.getDrawable().toString(), "bruh");
+
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        ParseFile imageFile = (ParseFile) currentUser.get("Profil_image");
+
+        if(imageFile == null) {
+            AlertDialog.Builder builder1 = new AlertDialog.Builder(EditProfile.this);
+            builder1.setMessage(getString(R.string.prikazNaProfiluAlert));
+            builder1.setCancelable(true);
+
+            builder1.setPositiveButton("Ok", (dialog, id) -> dialog.cancel());
+            AlertDialog alert11 = builder1.create();
+            alert11.show();
+        }
+
+
+            btnOpenDialog.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ImagePicker.Companion.with(EditProfile.this)
+                            .cropSquare()
+                            .compress(1024)
+                            .maxResultSize(350, 200)
+                            .start();
+                }
+            });
     }
 
 
@@ -141,6 +187,9 @@ public class EditProfile extends AppCompatActivity {
 
         Uri uri = data.getData();
         btnOpenDialog.setImageURI(uri);
+
+
+
 
         try {
             Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
@@ -171,14 +220,75 @@ public class EditProfile extends AppCompatActivity {
     }
 
 
+    //action bar spremi itd...
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar_settings, menu);
+
+        action = menu;
+        action.findItem(R.id.save).setVisible(false);
+
+        return super.onCreateOptionsMenu(menu);
+    }
 
 //klik na action baru, npr. spremi
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case com.example.myapplication.R.id.spremi:
-                Toast.makeText(EditProfile.this, "Rabilo je prije", Toast.LENGTH_SHORT).show();
-                // User chose the "Settings" item, show the app settings UI...
+            case R.id.edit:
+
+                txIme.setFocusableInTouchMode(true);
+                username.setFocusableInTouchMode(true);
+
+                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(EditProfile.this.INPUT_METHOD_SERVICE);
+                inputMethodManager.showSoftInput(txIme, inputMethodManager.SHOW_IMPLICIT);
+
+                openPopupDatum.setEnabled(true);
+                openPopupDatum.setFocusableInTouchMode(true);
+
+
+                openPopupSpol.setEnabled(true);
+                openPopupSpol.setFocusableInTouchMode(true);
+
+                onClickTrazimSpol.setEnabled(true);
+                onClickTrazimSpol.setFocusableInTouchMode(true);
+
+
+                action.findItem(R.id.edit).setVisible(false);
+                action.findItem(R.id.save).setVisible(true);
+
+                return true;
+
+            case R.id.save:
+
+                action.findItem(R.id.edit).setVisible(true);
+                action.findItem(R.id.save).setVisible(false);
+
+
+
+                username.setFocusableInTouchMode(false);
+                username.setFocusable(false);
+                nadimak = username.getText().toString();
+
+                txIme.setFocusableInTouchMode(false);
+                txIme.setFocusable(false);
+                ime = txIme.getText().toString();
+
+                openPopupDatum.setEnabled(false);
+                openPopupDatum.setFocusableInTouchMode(false);
+                openPopupDatum.setFocusable(false);
+
+                openPopupSpol.setEnabled(false);
+                openPopupSpol.setFocusableInTouchMode(false);
+                openPopupSpol.setFocusable(false);
+
+                onClickTrazimSpol.setEnabled(false);
+                onClickTrazimSpol.setFocusableInTouchMode(false);
+                onClickTrazimSpol.setFocusable(false);
+
+
+                saveUserData(ime, datumRodenja, spol, nadimak, trazimSpol);
 
                 return true;
 
@@ -193,52 +303,84 @@ public class EditProfile extends AppCompatActivity {
         }
     }
 
-    //action bar spremi itd...
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(com.example.myapplication.R.menu.action_bar_settings, menu);
 
-        return super.onCreateOptionsMenu(menu);
+
+
+    public void saveUserData(String ime, String datumRodenja, String spol, String nadimak, String zelimUpoznati) {
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereEqualTo("email", ParseUser.getCurrentUser().getEmail());
+
+
+        query.findInBackground((objects, e) -> {
+            if(e == null){
+                for (ParseObject object:objects){
+                    query.getInBackground(object.getObjectId(), (object1, e1) -> {
+                        if(e1 == null) {
+                            if(ime != null){
+                                object1.put("Ime", ime);
+                            }
+                            if(datumRodenja != null) {
+                                object1.put("Datum_rodenja", datumRodenja);
+                            }
+                            if(spol != null) {
+                                object1.put("User_spol", spol);
+                            }
+                            if(nadimak != null)  {
+                                object1.put("username", nadimak);
+                            }
+                            if(zelimUpoznati != null) {
+                                object1.put("User_traziSpol", zelimUpoznati);
+                            }
+
+                            object1.saveInBackground(new SaveCallback() {
+                                @Override
+                                public void done(ParseException e) {
+                                    if(e == null) {
+                                        Toast.makeText(EditProfile.this, getString(R.string.uspijesnoAzurirano), Toast.LENGTH_SHORT).show();
+                                    }
+                                    else {
+                                        Toast.makeText(EditProfile.this, getString(R.string.dosloJeDoGreske), Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        }
+                        else {
+                            Toast.makeText(EditProfile.this, getString(R.string.dosloJeDoGreske), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+            else {
+                Toast.makeText(EditProfile.this, getString(R.string.dosloJeDoGreske), Toast.LENGTH_SHORT).show();
+            }
+
+        });
+
     }
 
     public void getUserData() {
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
-        query.whereEqualTo("User_email", ParseUser.getCurrentUser().getEmail());
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereEqualTo("email", ParseUser.getCurrentUser().getEmail());
 
-        query.findInBackground(new FindCallback<ParseObject>() {
+        query.findInBackground(new FindCallback<ParseUser>() {
             @Override
-            public void done(List<ParseObject> objects, ParseException e) {
-                String objectId = "";
-                if(e == null) {
-                    for (ParseObject object:objects){
-                        objectId = object.getObjectId();
-                    }
-                }
-                else {
-                    Log.e("Nesto je krivo", e.getMessage());
-                }
-
-                ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("editProfile");
-                query.getInBackground(objectId, new GetCallback<ParseObject>() {
-                    @Override
-                    public void done(ParseObject object, ParseException e) {
-                        if(e == null) {
+            public void done(List<ParseUser> objects, ParseException e) {
+                for(ParseObject object:objects){
+                    query.getInBackground(object.getObjectId(), new GetCallback<ParseUser>() {
+                        @Override
+                        public void done(ParseUser object, ParseException e) {
                             txSpol.setText(object.getString("User_spol"));
                             txIme.setText(object.getString("Ime"));
                             openPopupDatum.setText(object.getString("Datum_rodenja"));
-                            onClickTrazimSpol.setText(object.getString("User_traziSpol"));
-                            godinaOd.setText(object.getString("Godine_od"));
-                            godinaDo.setText(object.getString("Godine_do"));
-                            editTxAboutPartner.setText(object.getString("About_partner"));
-                            editTxAboutYou.setText(object.getString("About_you"));
+                            txTraziSpol.setText(object.getString("User_traziSpol"));
+                           // godinaOd.setText(object.getString("Godine_od"));
+                           // godinaDo.setText(object.getString("Godine_do"));
+                           // editTxAboutPartner.setText(object.getString("About_partner"));
+                           // editTxAboutYou.setText(object.getString("About_you"));
                         }
-                        else {
-                            Log.e("Nista od toga", e.getMessage());
-                        }
-                    }
-                });
+                    });
+                }
             }
         });
     }
@@ -256,6 +398,7 @@ public class EditProfile extends AppCompatActivity {
                     if(e == null) {
                         Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
 
+
                         btnOpenDialog.setImageBitmap(bitmap);
                     }
                     else {
@@ -266,116 +409,6 @@ public class EditProfile extends AppCompatActivity {
         } else {
             Log.e("ma nis", "slika nije stavljena");
         }
-    }
-
-
-
-
-
-
-
-
-    public void editBirthDateOfUser(String datumRodenja) {
-
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
-        query.whereEqualTo("User_email", ParseUser.getCurrentUser().getEmail());
-
-        query.getFirstInBackground(new GetCallback<ParseObject>() {
-            @Override
-            public void done(ParseObject object, ParseException e) {
-                String objectID = "";
-                if(e == null){
-                    objectID = object.getObjectId();
-
-                    query.getInBackground(objectID, new GetCallback<ParseObject>() {
-                        @Override
-                        public void done(ParseObject object, ParseException e) {
-                            if(e == null){
-                                object.put("Datum_rodenja", datumRodenja);
-
-                                object.saveInBackground(new SaveCallback() {
-                                    @Override
-                                    public void done(ParseException e) {
-                                        if (e == null) {
-                                            Toast.makeText(EditProfile.this, getString(com.example.myapplication.R.string.uspijesnoAzurirano), Toast.LENGTH_SHORT).show();
-                                        }
-                                        else {
-                                            Toast.makeText(EditProfile.this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                            } else {
-                                Toast.makeText(EditProfile.this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                } else {
-                    Toast.makeText(EditProfile.this, "Error", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
-
-    public void editSexOfUser(String spol) {
-
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("editProfile");
-        query.whereEqualTo("User_email", ParseUser.getCurrentUser().getEmail());
-
-        query.getFirstInBackground(new GetCallback<ParseObject>() {
-            @Override
-            public void done(ParseObject object, ParseException e) {
-                String objectID = "";
-                if(e == null){
-                    objectID = object.getObjectId();
-
-                    query.getInBackground(objectID, new GetCallback<ParseObject>() {
-                        @Override
-                        public void done(ParseObject object, ParseException e) {
-                            if(e == null){
-                                object.put("User_spol", spol);
-
-                                object.saveInBackground(new SaveCallback() {
-                                    @Override
-                                    public void done(ParseException e) {
-                                        if (e == null) {
-                                            Toast.makeText(EditProfile.this, getString(com.example.myapplication.R.string.uspijesnoAzurirano), Toast.LENGTH_SHORT).show();
-                                        }
-                                        else {
-                                            Toast.makeText(EditProfile.this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                            } else {
-                                Toast.makeText(EditProfile.this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-                } else {
-                    Toast.makeText(EditProfile.this, "Error", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
-
-
-
-
-    public void editNameOfUsername(String nadimak) {
-        ParseUser user = ParseUser.getCurrentUser();
-        user.setUsername(nadimak);
-        user.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                if(e == null) {
-                    Toast.makeText(EditProfile.this, getString(com.example.myapplication.R.string.uspijesnoAzurirano), Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Toast.makeText(EditProfile.this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
     }
 
 
@@ -411,50 +444,11 @@ public class EditProfile extends AppCompatActivity {
         });
     }
 
+
+    String datumRodenja;
+    String trazimSpol;
     String ime;
-    public void openPopupEditName () {
-        EditText editTextField  = new EditText(this);
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Unesi svoje ime")
-                .setView(editTextField)
-                .setPositiveButton(getString(com.example.myapplication.R.string.spremi), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        EditProfileActivity editProfileActivity  = new EditProfileActivity();
-                        String editTextInput = editTextField.getText().toString();
-                        txIme.setText(editTextInput);
-                        ime = txIme.getText().toString();
-                        editProfileActivity.editNameOfUser(ime, EditProfile.this);
-                        Log.d("onclick","editext value is: "+ editTextInput);
-                    }
-                })
-                .setNegativeButton(getString(com.example.myapplication.R.string.odustani), null)
-                .create();
-        dialog.show();
-    }
-
     String nadimak;
-    public void openPopupEditUsername () {
-        EditText editTextField  = new EditText(this);
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Unesi novi nadimak")
-                .setView(editTextField)
-                .setPositiveButton(getString(com.example.myapplication.R.string.spremi), new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String editTextInput = editTextField.getText().toString();
-                        username.setText(editTextInput);
-                        nadimak = username.getText().toString();
-                        editNameOfUsername(nadimak);
-                        Log.d("onclick","editext value is: "+ editTextInput);
-                    }
-                })
-                .setNegativeButton(getString(com.example.myapplication.R.string.odustani), null)
-                .create();
-        dialog.show();
-    }
-
-
     String spol;
    public void openPopupEditSex() {
 
@@ -484,7 +478,7 @@ public class EditProfile extends AppCompatActivity {
                alertDialog.setPositiveButton(getString(com.example.myapplication.R.string.spremi), new DialogInterface.OnClickListener() {
                    public void onClick(DialogInterface dialog, int whichButton) {
                        spol = txSpol.getText().toString();
-                       editSexOfUser(spol);
+                      // editSexOfUser(spol);
                    }
                });
                alertDialog.setNegativeButton(getString(com.example.myapplication.R.string.odustani), new DialogInterface.OnClickListener() {
@@ -500,7 +494,7 @@ public class EditProfile extends AppCompatActivity {
     }
 
 
-    String trazimSpol;
+
     public void openPopupPickSexForMeeting() {
         onClickTrazimSpol.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -514,10 +508,10 @@ public class EditProfile extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         switch (which) {
                             case 0:
-                                onClickTrazimSpol.setText(getString(R.string.trazimZenu));
+                                txTraziSpol.setText(getString(R.string.trazimZenu));
                                 break;
                             case 1:
-                                onClickTrazimSpol.setText(getString(R.string.trazimMuskarca));
+                                txTraziSpol.setText(getString(R.string.trazimMuskarca));
                                 break;
                         }
                     }
@@ -526,8 +520,7 @@ public class EditProfile extends AppCompatActivity {
                 alertDialog.setPositiveButton(getString(com.example.myapplication.R.string.spremi), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         EditProfileActivity editProfileActivity = new EditProfileActivity();
-                        trazimSpol = onClickTrazimSpol.getText().toString();
-                        editProfileActivity.editPickSexForMeeting(trazimSpol, EditProfile.this);
+                        trazimSpol = txTraziSpol.getText().toString();
                     }
                 });
                 alertDialog.setNegativeButton(getString(R.string.odustani), new DialogInterface.OnClickListener() {
@@ -543,32 +536,32 @@ public class EditProfile extends AppCompatActivity {
     }
 
 
-    String datumRodenja;
+
   public void  openPopupEditBirthdate() {
+      openPopupDatum.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              if (v == openPopupDatum) {
+                  final Calendar calendar = Calendar.getInstance ();
+                  mYear = calendar.get ( Calendar.YEAR );
+                  mMonth = calendar.get ( Calendar.MONTH );
+                  mDay = calendar.get ( Calendar.DAY_OF_MONTH );
 
-        openPopupDatum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v == openPopupDatum) {
-                    final Calendar calendar = Calendar.getInstance ();
-                    mYear = calendar.get ( Calendar.YEAR );
-                    mMonth = calendar.get ( Calendar.MONTH );
-                    mDay = calendar.get ( Calendar.DAY_OF_MONTH );
+                  //show dialog
+                  DatePickerDialog datePickerDialog = new DatePickerDialog ( EditProfile.this, new DatePickerDialog.OnDateSetListener () {
+                      @Override
+                      public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                          openPopupDatum.setText( dayOfMonth + "/" + (month + 1) + "/" + year);
+                          datumRodenja = openPopupDatum.getText().toString();
+                          //  editBirthDateOfUser(datumRodenja);
+                      }
+                  }, mYear, mMonth, mDay );
 
-                    //show dialog
-                    DatePickerDialog datePickerDialog = new DatePickerDialog ( EditProfile.this, new DatePickerDialog.OnDateSetListener () {
-                        @Override
-                        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                            openPopupDatum.setText( dayOfMonth + "/" + (month + 1) + "/" + year);
-                            datumRodenja = openPopupDatum.getText().toString();
-                            editBirthDateOfUser(datumRodenja);
-                        }
-                    }, mYear, mMonth, mDay );
+                  datePickerDialog.show ();
+              }
+          }
+      });
 
-                    datePickerDialog.show ();
-                }
-            }
-        });
     }
 }
 

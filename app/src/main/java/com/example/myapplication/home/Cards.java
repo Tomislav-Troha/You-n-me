@@ -1,7 +1,7 @@
 package com.example.myapplication.home;
 
 import android.graphics.Bitmap;
-import com.parse.ParseObject;
+
 
 public class Cards {
 
@@ -11,16 +11,45 @@ public class Cards {
     private String objectId;
     private String aboutPartner;
     private String aboutYou;
+    private String traziSpol;
+    private String godine_do;
+    private String godine_od;
 
-    public Cards(String username, Bitmap img) {
+
+    public Cards(String username, Bitmap img, String aboutPartner, String aboutYou, String traziSpol, String godine_od, String godine_do) {
         this.img = img;
         this.username = username;
-    }
-
-  /*  public Cards (String aboutPartner, String aboutYou) {
         this.aboutPartner = aboutPartner;
         this.aboutYou = aboutYou;
-    }*/
+        this.traziSpol = traziSpol;
+        this.godine_od = godine_od;
+        this.godine_do = godine_do;
+    }
+
+
+
+
+    public String getGodine_do() {
+        return godine_do;
+    }
+    public void setGodine_do(String godine_do) {
+        this.godine_do = godine_do;
+    }
+
+    public String getGodine_od() {
+        return godine_od;
+    }
+    public void setGodine_od(String godine_od) {
+        this.godine_od = godine_od;
+    }
+
+
+    public String getTraziSpol() {
+        return traziSpol;
+    }
+    public void setTraziSpol(String traziSpol) {
+        this.traziSpol = traziSpol;
+    }
 
 
     public String getAboutYou() {

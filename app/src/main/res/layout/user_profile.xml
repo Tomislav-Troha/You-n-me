@@ -8,7 +8,7 @@
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical">
             <RelativeLayout
                     android:layout_width="match_parent"
@@ -28,64 +28,95 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:id="@+id/userIme"
                         android:layout_alignParentStart="true" android:layout_marginStart="8dp"
-                        android:layout_alignParentTop="true" android:layout_marginTop="12dp" android:textSize="30sp"/>
+                        android:layout_alignParentTop="true" android:layout_marginTop="6dp" android:textSize="35sp"/>
                 <TextView
-                        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make."
                         android:layout_width="380dp"
-                        android:layout_height="113dp" android:layout_alignParentStart="true"
-                        android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="532dp" android:id="@+id/txAboutYou" android:textSize="17sp"/>
+                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
+                        android:layout_marginStart="7dp"
+                        android:id="@+id/txAboutYou" android:textSize="17sp"
+                        android:layout_marginTop="60dp"/>
                 <TextView
-                        android:text="22 - 24 godine"
+                        android:textStyle="italic"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:layout_marginStart="100dp" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="471dp" android:id="@+id/textView32" android:textSize="18sp"/>
-                <TextView
-                        android:text="Muškarca"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="471dp" android:id="@+id/textView31" android:textSize="18sp"/>
-                <TextView
-                        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
-                        android:layout_width="380dp"
-                        android:layout_height="123dp" android:layout_alignParentStart="true"
-                        android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="344dp" android:id="@+id/txAboutPartner" android:textSize="17sp"/>
-                <TextView
-                        android:text="@string/trazim"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="496dp" android:id="@+id/textView30" android:textSize="24sp"/>
+                        android:layout_marginStart="8dp" android:layout_alignParentBottom="false"
+                        android:id="@+id/trazimSpol" android:textSize="18sp"
+                        android:layout_marginTop="146dp" android:hint="Spol"/>
                 <ImageView
                         android:layout_width="130dp"
                         android:layout_height="130dp" tools:srcCompat="@mipmap/dolezabar_foreground"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="166dp"
+                        android:layout_alignParentBottom="true" android:layout_marginBottom="287dp"
                         app:layout_constraintStart_toStartOf="parent" android:id="@+id/imageView26"
                         android:layout_alignParentStart="true" android:layout_marginStart="139dp"/>
                 <TextView
-                        android:text="@string/slike"
+                        android:text="@string/trazim"
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" android:id="@+id/textView34"
-                        android:layout_alignParentStart="true" android:layout_marginStart="8dp"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="299dp"
-                        android:textSize="24dp"/>
+                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
+                        android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="557dp" android:id="@+id/textView30" android:textSize="24sp"/>
+                <TextView
+                        android:hint="22"
+                        android:textStyle="italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="false"
+                        android:id="@+id/txGodine_od" android:textSize="18sp"
+                        android:layout_marginTop="146dp"
+                        android:layout_alignEnd="@id/trazimSpol" android:layout_marginEnd="-53dp"/>
+                <TextView
+                        android:layout_width="380dp"
+                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
+                        android:layout_marginStart="8dp" android:layout_alignParentBottom="false"
+                        android:id="@+id/txAboutPartner" android:textSize="17sp" android:layout_marginTop="185dp"/>
                 <ImageView
                         android:layout_width="130dp"
                         android:layout_height="130dp" tools:srcCompat="@mipmap/dolezabar_foreground"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="166dp"
+                        android:layout_alignParentBottom="true" android:layout_marginBottom="287dp"
                         app:layout_constraintStart_toStartOf="parent" android:id="@+id/imageView23"
                         android:layout_alignParentStart="true" android:layout_marginStart="8dp"/>
                 <ImageView
                         android:layout_width="130dp"
                         android:layout_height="130dp" tools:srcCompat="@mipmap/dolezabar_foreground"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="166dp"
+                        android:layout_alignParentBottom="true" android:layout_marginBottom="287dp"
                         app:layout_constraintStart_toStartOf="parent" android:id="@+id/imageView27"
                         android:layout_alignParentStart="true"
-                        android:layout_marginEnd="8dp" android:layout_marginStart="276dp"/>
+                        android:layout_marginEnd="8dp" android:layout_marginStart="275dp"/>
+                <TextView
+                        android:text="@string/slike"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" android:id="@+id/textView34"
+                        android:layout_alignParentStart="true" android:layout_marginStart="7dp"
+                        android:layout_alignParentBottom="true" android:layout_marginBottom="421dp"
+                        android:textSize="24sp"/>
+                <TextView
+                        android:hint="24"
+                        android:textStyle="italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="false"
+                        android:id="@+id/txGodine_do" android:textSize="18sp" android:layout_marginTop="146dp"
+                        android:layout_alignEnd="@id/txGodine_od"
+                        android:layout_marginEnd="-50dp"/>
+                <TextView
+                        android:text="-"
+                        android:textStyle="italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="533dp" android:id="@+id/textView28" android:textSize="16sp"
+                        android:layout_toEndOf="@+id/trazimSpol" android:layout_marginStart="66dp"/>
+                <TextView
+                        android:text="@string/godina"
+                        android:textStyle="italic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView29" android:textSize="18sp"
+                        android:layout_marginStart="108dp"
+                        android:layout_marginTop="146dp" android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/trazimSpol"/>
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

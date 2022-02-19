@@ -11,25 +11,25 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical" android:gravity="center" android:padding="15dp">
-            <RelativeLayout
-                    android:layout_width="175dp"
-                    android:layout_height="148dp"
-            >
+            <androidx.cardview.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp" app:cardCornerRadius="5dp"
+                    app:cardElevation="6dp" android:padding="10dp">
                 <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="145dp" app:srcCompat="@mipmap/add_image_foreground"
-                        android:layout_alignParentStart="true" android:layout_marginStart="0dp"
-                        android:layout_alignParentTop="true" android:layout_marginTop="3dp"
-                        android:id="@+id/imgBtnOpenDialog"/>
-            </RelativeLayout>
+                        android:layout_height="match_parent"
+                        android:id="@+id/imgBtnOpenDialog" android:scaleType="centerCrop"
+                        android:src="@mipmap/add_image_foreground"/>
+            </androidx.cardview.widget.CardView>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="25sp"
+                    android:textAllCaps="true"
                     android:text="@string/osobniPodaci"
                     android:textColor="@color/black"
                     android:id="@+id/osobniPodaci"
-                    android:layout_marginEnd="90dp"/>
+                    android:layout_marginTop="30dp"/>
             <RelativeLayout
                     android:background="@drawable/shape"
                     android:layout_width="match_parent"
@@ -44,8 +44,8 @@
                         android:layout_marginTop="15dp">
 
                     <EditText
-                            android:textColor="@drawable/text_selector"
                             android:focusable="false"
+                            android:textColor="@drawable/text_selector"
                             android:layout_width="339dp"
                             android:layout_height="match_parent"
                             android:id="@+id/txIme"
@@ -93,7 +93,7 @@
                             android:layout_marginStart="40dp"
                             android:background="@null"
                             android:paddingTop="25dp"
-                            android:inputType="date"
+                            android:inputType="text"
                             android:hint="@string/nadimak" android:layout_alignParentBottom="true"
                             android:layout_marginBottom="0dp"/>
                     <ImageView
@@ -146,13 +146,14 @@
                         android:layout_marginTop="15dp">
 
                     <TextView
-                            android:clickable="true"
+
                             android:text="@string/spol"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" android:id="@+id/textView18"
                             android:layout_marginStart="40dp"
                             android:layout_marginTop="1dp"/>
                     <TextView
+                            android:focusable="false"
                             android:text="@string/odaberiSpol"
                             android:layout_width="106dp"
                             android:layout_height="wrap_content" android:layout_alignParentStart="true"
@@ -180,7 +181,7 @@
                     android:textAllCaps="true"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/black"
-                    android:id="@+id/textPrivateInfo" android:layout_marginEnd="140dp"/>
+                    android:id="@+id/textPrivateInfo"/>
             <RelativeLayout
                     android:background="@drawable/shape"
                     android:layout_width="match_parent"
@@ -192,27 +193,28 @@
 
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        android:id="@+id/relLayoutTrazimSpol"
+                        android:id="@+id/onClickTrazimSpol"
                         android:layout_marginTop="15dp" android:layout_alignParentEnd="true"
                         android:layout_marginEnd="0dp">
-                    <TextView
-                            android:text="@string/zelimUpoznati"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                            android:layout_marginStart="40dp" android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="45dp" android:id="@+id/textView23"/>
 
-                    <EditText
+                    <TextView
                             android:focusable="false"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/onClickTrazimSpol"
-                            android:layout_centerVertical="true"
+                            android:text="@string/zelimUpoznati"
+                            android:layout_width="106dp"
+                            android:layout_height="wrap_content" android:layout_alignParentStart="true"
+                            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="41dp"
+                            app:layout_constraintTop_toTopOf="parent" android:id="@+id/odaberiSpol"
+                            android:layout_alignParentBottom="true" android:layout_marginBottom="41dp"
+                            android:textSize="15sp"/>
+                    <TextView
+                            android:focusable="false"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginStart="40dp"
                             android:background="@null"
-                            android:paddingTop="25dp"
-                            android:inputType="text"
-                            android:hint="@string/klikniZaVise"/>
+                            android:textSize="18sp"
+                            android:hint="@string/odaberiSpol" android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="12dp" android:id="@+id/txtraziSpol"/>
                     <ImageView
                             android:layout_width="60dp"
                             android:layout_height="40dp" app:srcCompat="@mipmap/editicon_foreground"
@@ -227,7 +229,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:id="@+id/relLayoutIzmeduGodina"
-                        android:layout_below="@+id/relLayoutTrazimSpol"
+                        android:layout_below="@+id/onClickTrazimSpol"
                         android:layout_marginTop="15dp" android:layout_alignParentEnd="true"
                         android:layout_marginEnd="0dp">
                     <TextView
@@ -267,11 +269,11 @@
                             android:scaleY="2"/>
 
                     <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="60dp" app:srcCompat="@mipmap/saveicon_foreground"
+                            android:layout_width="60dp"
+                            android:layout_height="40dp" app:srcCompat="@mipmap/saveicon_foreground"
                             android:layout_alignParentBottom="true" app:layout_constraintEnd_toEndOf="parent"
-                            android:layout_marginBottom="6dp" android:id="@+id/savePickYears"
-                            android:layout_alignParentEnd="true" android:layout_marginEnd="-7dp"/>
+                            android:layout_marginBottom="10dp" android:id="@+id/savePickYears"
+                            android:layout_alignParentEnd="true" android:layout_marginEnd="2dp"/>
                 </RelativeLayout>
                 <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -299,11 +301,12 @@
                             android:scrollbars="vertical"
                             android:layout_marginStart="40dp" android:id="@+id/editTxAboutPartner"/>
                     <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="60dp" app:srcCompat="@mipmap/saveicon_foreground"
-                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_width="60dp"
+                            android:layout_height="40dp" app:srcCompat="@mipmap/saveicon_foreground"
                             android:id="@+id/saveAboutPartner"
-                            android:layout_marginStart="330dp"/>
+                            android:layout_marginEnd="2dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentBottom="true" android:layout_marginBottom="10dp"/>
                 </RelativeLayout>
 
 
@@ -312,7 +315,7 @@
                     android:text="@string/oSebi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/textView26"
-                    android:textSize="25sp" android:layout_marginEnd="140dp" android:textColor="@color/black"
+                    android:textSize="25sp" android:textColor="@color/black"
                     android:layout_marginTop="30dp"/>
             <RelativeLayout
                     android:layout_width="match_parent"
@@ -338,12 +341,11 @@
                             android:scrollbars="vertical"
                             android:layout_marginStart="40dp" android:id="@+id/editTxAboutYou"/>
                     <ImageView
-                            android:layout_width="80dp"
+                            android:layout_width="40dp"
                             android:layout_height="60dp" app:srcCompat="@mipmap/saveicon_foreground"
-                            app:layout_constraintEnd_toEndOf="parent"
                             android:id="@+id/saveAboutYou"
-                            android:layout_marginStart="330dp"
-                            android:layout_alignParentBottom="true" android:layout_marginBottom="20dp"/>
+                            android:layout_alignParentBottom="true" android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="10dp" android:layout_marginBottom="12dp"/>
                 </RelativeLayout>
             </RelativeLayout>
 
