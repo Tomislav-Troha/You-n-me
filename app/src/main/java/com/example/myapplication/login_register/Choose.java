@@ -11,10 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.home.HomePage;
 import com.example.myapplication.R;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
-import com.parse.SaveCallback;
+import com.parse.*;
 
 import java.util.Locale;
 
@@ -94,18 +91,17 @@ public class Choose extends AppCompatActivity {
     }
 
     public void addToDatabase (String tisi, String trazis) {
-        ParseObject editProfile = new ParseObject("editProfile");
+        ParseUser user_profile = ParseUser.getCurrentUser();
 
         String pUser = ParseUser.getCurrentUser().getEmail();
 
         Log.w("state", txtiSi.toString());
 
 
-        editProfile.put("User_email", pUser);
-        editProfile.put("User_spol", tisi);
-        editProfile.put("User_traziSpol", trazis);
-        editProfile.put("Datum_rodenja", "");
-        editProfile.saveInBackground(new SaveCallback() {
+        user_profile.put("User_spol", tisi);
+        user_profile.put("User_traziSpol", trazis);
+        user_profile.put("Datum_rodenja", "");
+        user_profile.saveInBackground(new SaveCallback() {
             public void done(ParseException e) {
                 if (e == null) {
                     // your object is successfully created.

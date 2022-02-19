@@ -157,10 +157,10 @@
                             android:text="@string/odaberiSpol"
                             android:layout_width="106dp"
                             android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="50dp"
+                            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="40dp"
                             app:layout_constraintTop_toTopOf="parent" android:id="@+id/txSpol"
-                            android:layout_alignParentBottom="true" android:layout_marginBottom="7dp"
-                            android:scaleX="1.2" android:scaleY="1.2"/>
+                            android:layout_alignParentBottom="true" android:layout_marginBottom="3dp"
+                            android:textSize="18sp"/>
                     <ImageView
                             android:layout_width="60dp"
                             android:layout_height="40dp" app:srcCompat="@mipmap/editicon_foreground"
@@ -205,7 +205,7 @@
                             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="41dp"
                             app:layout_constraintTop_toTopOf="parent" android:id="@+id/odaberiSpol"
                             android:layout_alignParentBottom="true" android:layout_marginBottom="41dp"
-                            android:textSize="15sp"/>
+                            android:textSize="14sp"/>
                     <TextView
                             android:focusable="false"
                             android:layout_width="wrap_content"
@@ -240,6 +240,7 @@
                             android:layout_marginBottom="45dp" android:id="@+id/textView24"/>
 
                     <EditText
+                            android:focusable="false"
                             android:layout_width="40dp"
                             android:layout_height="match_parent"
                             android:id="@+id/txGodinaOd"
@@ -251,6 +252,7 @@
                             android:hint="@string/_od"/>
 
                     <EditText
+                            android:focusable="false"
                             android:layout_width="40dp"
                             android:layout_height="match_parent"
                             android:id="@+id/txGodinaDo"
@@ -267,13 +269,14 @@
                             android:layout_marginStart="95dp" android:layout_alignParentBottom="true"
                             android:layout_marginBottom="14dp" android:id="@+id/textView25" android:scaleX="2"
                             android:scaleY="2"/>
-
                     <ImageView
                             android:layout_width="60dp"
-                            android:layout_height="40dp" app:srcCompat="@mipmap/saveicon_foreground"
-                            android:layout_alignParentBottom="true" app:layout_constraintEnd_toEndOf="parent"
-                            android:layout_marginBottom="10dp" android:id="@+id/savePickYears"
-                            android:layout_alignParentEnd="true" android:layout_marginEnd="2dp"/>
+                            android:layout_height="40dp" app:srcCompat="@mipmap/editicon_foreground"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:id="@+id/imageView11"
+                            android:layout_alignParentEnd="true" android:layout_marginEnd="2dp"
+                            android:layout_alignParentBottom="true" android:layout_marginBottom="10dp"/>
+
                 </RelativeLayout>
                 <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -285,10 +288,12 @@
                 <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        android:layout_below="@+id/relLayoutIzmeduGodina">
+                        android:layout_below="@+id/relLayoutIzmeduGodina" android:layout_marginTop="15dp"
+                        android:layout_alignParentEnd="true" android:layout_marginEnd="0dp">
 
 
                     <EditText
+                            android:focusable="false"
                             android:hint="@string/parRijeciPartneru"
                             android:maxLength="150"
                             android:inputType="textMultiLine"
@@ -302,11 +307,12 @@
                             android:layout_marginStart="40dp" android:id="@+id/editTxAboutPartner"/>
                     <ImageView
                             android:layout_width="60dp"
-                            android:layout_height="40dp" app:srcCompat="@mipmap/saveicon_foreground"
-                            android:id="@+id/saveAboutPartner"
-                            android:layout_marginEnd="2dp"
+                            android:layout_height="40dp" app:srcCompat="@mipmap/editicon_foreground"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:id="@+id/imageView12"
                             android:layout_alignParentEnd="true"
-                            android:layout_alignParentBottom="true" android:layout_marginBottom="10dp"/>
+                            android:layout_marginEnd="2dp" android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"/>
                 </RelativeLayout>
 
 
@@ -320,8 +326,7 @@
             <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/shape"
-                    android:layout_below="@+id/relLayout117">
+                    android:background="@drawable/shape">
 
                 <RelativeLayout
 
@@ -329,6 +334,7 @@
                         android:layout_height="100dp">
 
                     <EditText
+                            android:focusable="false"
                             android:hint="@string/parRijeci_o_Sebi"
                             android:inputType="textMultiLine"
                             android:maxLength="150"
@@ -341,11 +347,13 @@
                             android:scrollbars="vertical"
                             android:layout_marginStart="40dp" android:id="@+id/editTxAboutYou"/>
                     <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="60dp" app:srcCompat="@mipmap/saveicon_foreground"
-                            android:id="@+id/saveAboutYou"
-                            android:layout_alignParentBottom="true" android:layout_alignParentEnd="true"
-                            android:layout_marginEnd="10dp" android:layout_marginBottom="12dp"/>
+                            android:layout_width="60dp"
+                            android:layout_height="40dp" app:srcCompat="@mipmap/editicon_foreground"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:id="@+id/imageView13"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="6dp" android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="30dp"/>
                 </RelativeLayout>
             </RelativeLayout>
 

@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
@@ -16,24 +15,22 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
+public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
 
     private LayoutInflater layoutInflater;
-    private List<Cards> data;
+    private List < Cards > data;
 
     private Context context;
 
-    Adapter(Context context, List<Cards> data) {
+    Adapter(Context context, List < Cards > data) {
         this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
     }
 
-
-
     @NonNull
     @NotNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull  ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = layoutInflater.inflate(R.layout.list_of_user, parent, false);
         return new ViewHolder(view);
     }
@@ -42,7 +39,6 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         holder.username.setText(data.get(position).getUsername());
         holder.img.setImageBitmap(data.get(position).getImg());
-
 
         holder.itemView.setOnClickListener(view -> {
             Intent intent = new Intent(context, ProfileofUsers.class);
@@ -64,17 +60,11 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return data.size();
     }
 
-
-
-
-    public class ViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView username;
         ImageView img;
         TextView clickForMore;
-
-
-
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
@@ -83,28 +73,25 @@ public class Adapter  extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
             clickForMore = itemView.findViewById(R.id.txVidiVise);
 
-
             context = itemView.getContext();
-
 
         }
 
         @Override
         public void onClick(View v) {
 
-       /*     final Intent intent;
-            switch (getAdapterPosition()){
-                case 0:
-                    intent = new Intent(context, ProfileofUsers.class);
-                    break;
+      /*     final Intent intent;
+           switch (getAdapterPosition()){
+               case 0:
+                   intent = new Intent(context, ProfileofUsers.class);
+                   break;
 
-                default:
-                    intent = new Intent(context, HomePage.class);
-            }
-            context.startActivity(intent); */
+               default:
+                   intent = new Intent(context, HomePage.class);
+           }
+           context.startActivity(intent); */
 
         }
-
 
     }
 
