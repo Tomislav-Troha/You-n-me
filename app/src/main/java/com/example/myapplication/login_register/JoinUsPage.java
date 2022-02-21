@@ -1,5 +1,6 @@
 package com.example.myapplication.login_register;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,18 +11,18 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.home.HomePage;
+import com.example.myapplication.settings.EditProfile;
 import com.parse.*;
+
+import java.util.Calendar;
 
 public class JoinUsPage extends AppCompatActivity  {
 
-    Button submitBtn;
+    private  Button submitBtn;
 
-    EditText nadimak;
-    EditText email;
-    EditText lozinka;
-
-
-
+    private EditText nadimak;
+    private EditText email;
+    private EditText lozinka;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class JoinUsPage extends AppCompatActivity  {
         lozinka =  findViewById(R.id.editLozinka);
 
         onClickSubmit();
+
     }
 
 
@@ -82,7 +84,6 @@ public class JoinUsPage extends AppCompatActivity  {
         });
 
     }
-
 
 
 

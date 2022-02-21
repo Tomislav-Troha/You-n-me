@@ -24,64 +24,25 @@
                     android:layout_height="700dp" android:layout_width="match_parent">
 
                 <TextView
-                        android:text="@string/ime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:id="@+id/userIme"
-                        android:layout_alignParentStart="true" android:layout_marginStart="8dp"
-                        android:layout_alignParentTop="true" android:layout_marginTop="6dp" android:textSize="35sp"/>
-                <TextView
                         android:layout_width="380dp"
                         android:layout_height="wrap_content" android:layout_alignParentStart="true"
                         android:layout_marginStart="7dp"
-                        android:id="@+id/txAboutYou" android:textSize="17sp"
-                        android:layout_marginTop="60dp"/>
-                <TextView
-                        android:textStyle="italic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:layout_marginStart="8dp" android:layout_alignParentBottom="false"
-                        android:id="@+id/trazimSpol" android:textSize="18sp"
-                        android:layout_marginTop="146dp" android:hint="/"/>
-                <ImageView
-                        android:layout_width="130dp"
-                        android:layout_height="130dp" tools:srcCompat="@mipmap/dolezabar_foreground"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="287dp"
-                        app:layout_constraintStart_toStartOf="parent" android:id="@+id/imageView26"
-                        android:layout_alignParentStart="true" android:layout_marginStart="139dp"/>
+                        android:id="@+id/txAboutYou" android:textSize="22sp"
+                        android:layout_marginTop="16dp" android:layout_below="@id/nameRel"/>
                 <TextView
                         android:text="@string/trazim"
                         android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:layout_marginStart="8dp" android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="557dp" android:id="@+id/textView30" android:textSize="24sp"/>
-                <TextView
-                        android:hint="/"
-                        android:textStyle="italic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="false"
-                        android:id="@+id/txGodine_od" android:textSize="18sp"
-                        android:layout_marginTop="146dp"
-                        android:layout_alignEnd="@id/trazimSpol" android:layout_marginEnd="-53dp"/>
+                        android:layout_marginStart="7dp"
+                        android:id="@+id/textView30" android:textSize="28sp"
+                        android:layout_marginTop="24dp" android:layout_below="@+id/txAboutYou"/>
                 <TextView
                         android:layout_width="380dp"
                         android:layout_height="wrap_content" android:layout_alignParentStart="true"
-                        android:layout_marginStart="8dp" android:layout_alignParentBottom="false"
-                        android:id="@+id/txAboutPartner" android:textSize="17sp" android:layout_marginTop="185dp"/>
-                <ImageView
-                        android:layout_width="130dp"
-                        android:layout_height="130dp" tools:srcCompat="@mipmap/dolezabar_foreground"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="287dp"
-                        app:layout_constraintStart_toStartOf="parent" android:id="@+id/imageView23"
-                        android:layout_alignParentStart="true" android:layout_marginStart="8dp"/>
-                <ImageView
-                        android:layout_width="130dp"
-                        android:layout_height="130dp" tools:srcCompat="@mipmap/dolezabar_foreground"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="287dp"
-                        app:layout_constraintStart_toStartOf="parent" android:id="@+id/imageView27"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginEnd="8dp" android:layout_marginStart="275dp"/>
+                        android:layout_marginStart="7dp" android:layout_alignParentBottom="false"
+                        android:id="@+id/txAboutPartner" android:textSize="22sp" android:layout_marginTop="18dp"
+                        android:layout_below="@id/relMan"/>
                 <TextView
                         android:text="@string/slike"
                         android:textStyle="bold"
@@ -89,34 +50,86 @@
                         android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent" android:id="@+id/textView34"
                         android:layout_alignParentStart="true" android:layout_marginStart="7dp"
-                        android:layout_alignParentBottom="true" android:layout_marginBottom="421dp"
-                        android:textSize="24sp"/>
-                <TextView
-                        android:hint="/"
-                        android:textStyle="italic"
+                        android:textSize="24sp"
+                        android:layout_marginTop="24dp" android:layout_below="@+id/txAboutPartner"/>
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="false"
-                        android:id="@+id/txGodine_do" android:textSize="18sp" android:layout_marginTop="146dp"
-                        android:layout_alignEnd="@id/txGodine_od"
-                        android:layout_marginEnd="-50dp"/>
-                <TextView
-                        android:text="-"
-                        android:textStyle="italic"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="7dp" android:layout_marginTop="18dp"
+                        android:layout_below="@+id/textView30" android:id="@+id/relMan">
+
+                    <TextView
+                            android:textStyle="normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/trazimSpol" android:textSize="20sp"
+                            android:hint="Man"
+                    />
+                    <TextView
+                            android:text="@string/godina"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView29" android:textSize="20sp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/txGodine_do"/>
+                    <TextView
+                            android:text="-"
+                            android:textStyle="italic"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView28" android:textSize="20sp"
+                            android:layout_toEndOf="@+id/txGodine_od"
+                            android:layout_marginStart="6dp"/>
+                    <TextView
+                            android:hint="30"
+                            android:textStyle="normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txGodine_do" android:textSize="20sp"
+                            android:layout_toEndOf="@+id/textView28" android:layout_marginStart="6dp"/>
+                    <TextView
+                            android:hint="26"
+                            android:textStyle="normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txGodine_od" android:textSize="20sp"
+                            android:layout_marginStart="16dp" android:layout_toEndOf="@+id/textView23"/>
+                    <TextView
+                            android:text=","
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView23"
+                            android:textSize="20sp" android:layout_toEndOf="@+id/trazimSpol"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="2dp" android:layout_marginTop="-1dp"/>
+                </RelativeLayout>
+                <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="533dp" android:id="@+id/textView28" android:textSize="16sp"
-                        android:layout_toEndOf="@+id/trazimSpol" android:layout_marginStart="66dp"/>
-                <TextView
-                        android:text="@string/godina"
-                        android:textStyle="italic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView29" android:textSize="18sp"
-                        android:layout_marginStart="108dp"
-                        android:layout_marginTop="146dp" android:layout_alignParentTop="true"
-                        android:layout_toEndOf="@+id/trazimSpol"/>
+                        android:id="@+id/nameRel" android:layout_marginTop="1dp" android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" android:layout_marginStart="7dp">
+
+                    <TextView
+                            android:text="@string/ime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/userIme"
+                            android:textSize="40sp"/>
+                    <TextView
+                            android:text=","
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView27"
+                            android:layout_marginStart="2dp" android:textSize="40sp"
+                            android:layout_toEndOf="@+id/userIme"/>
+                    <TextView
+                            android:text="30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/txUserGodina" android:textSize="40sp"
+                            android:layout_toEndOf="@+id/textView27" android:layout_marginStart="14dp"
+                            android:layout_marginBottom="0dp"/>
+                </RelativeLayout>
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>

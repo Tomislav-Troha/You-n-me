@@ -8,6 +8,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 
+import java.nio.charset.StandardCharsets;
+
 public class ProfileofUsers extends AppCompatActivity {
 
     TextView userIme;
@@ -17,6 +19,7 @@ public class ProfileofUsers extends AppCompatActivity {
     TextView txTrazimSpol;
     TextView godineOD;
     TextView godineDO;
+    TextView txgodine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,8 @@ public class ProfileofUsers extends AppCompatActivity {
         godineDO = findViewById(R.id.txGodine_do);
         godineOD = findViewById(R.id.txGodine_od);
 
+        txgodine = findViewById(R.id.txUserGodina);
+
 
 
         String username = "not set";
@@ -49,6 +54,8 @@ public class ProfileofUsers extends AppCompatActivity {
         String godine_od = "not set";
         String godine_do = "not set";
 
+        String godine = "not set";
+
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
             username = extras.getString("username");
@@ -58,6 +65,7 @@ public class ProfileofUsers extends AppCompatActivity {
             trazimSpol = extras.getString("User_traziSpol");
             godine_od = extras.getString("godine_od");
             godine_do = extras.getString("godine_do");
+            godine = extras.getString("godinaRodenja");
         }
 
         userIme.setText(username);
@@ -67,6 +75,7 @@ public class ProfileofUsers extends AppCompatActivity {
         txTrazimSpol.setText(trazimSpol);
         godineDO.setText(godine_do);
         godineOD.setText(godine_od);
+        txgodine.setText(godine);
 
 
 

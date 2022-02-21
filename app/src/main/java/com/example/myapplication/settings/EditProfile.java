@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -20,7 +19,6 @@ import android.widget.*;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.home.FirstFragment;
 import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.parse.*;
 import java.io.ByteArrayOutputStream;
@@ -71,7 +69,7 @@ public class EditProfile extends AppCompatActivity {
         txIme = findViewById(com.example.myapplication.R.id.txIme);
         openPopupSpol = findViewById(com.example.myapplication.R.id.onClickSpol);
         txSpol = findViewById(com.example.myapplication.R.id.txSpol);
-        openPopupDatum = findViewById(com.example.myapplication.R.id.editTxDatumRodenja);
+        openPopupDatum = findViewById(com.example.myapplication.R.id.datumRodenja);
         openEditIme = findViewById(com.example.myapplication.R.id.openPopupIme);
         username = findViewById(com.example.myapplication.R.id.editTxNadimak);
         godinaOd = findViewById(com.example.myapplication.R.id.txGodinaOd);
@@ -87,6 +85,7 @@ public class EditProfile extends AppCompatActivity {
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         //dohacanje podataka o useru
+       // username.setText(ParseUser.getCurrentUser().getUsername());
         getUserData();
 
         //otvara alert za odabir spola
@@ -98,8 +97,8 @@ public class EditProfile extends AppCompatActivity {
         //dohvaca profilnu sliku
         getProfileImageOfUser();
 
-        //dohavaca nadimak
-        username.setText(ParseUser.getCurrentUser().getUsername());
+
+
 
         //trazi spol popup
         openPopupPickSexForMeeting();
@@ -281,7 +280,7 @@ public class EditProfile extends AppCompatActivity {
                 editTxAboutPartner.setFocusable(false);
                 aboutParnter = editTxAboutPartner.getText().toString();
 
-                saveUserData(ime, datumRodenja, spol, nadimak, trazimSpol, god_od, god_do, aboutYou, aboutParnter);
+                saveUserData(ime, datumRodenja, spol, nadimak, trazimSpol, god_od, god_do, aboutYou, aboutParnter, nadimak);
 
                 return true;
 
@@ -296,7 +295,7 @@ public class EditProfile extends AppCompatActivity {
         }
     }
 
-    public void saveUserData(String ime, String datumRodenja, String spol, String nadimak, String zelimUpoznati, String godina_od, String godina_do, String aboutYou, String aboutParnter) {
+    public void saveUserData(String ime, String datumRodenja, String spol, String nadimak, String zelimUpoznati, String godina_od, String godina_do, String aboutYou, String aboutParnter, String username) {
         ParseQuery < ParseUser > query = ParseUser.getQuery();
         query.whereEqualTo("email", ParseUser.getCurrentUser().getEmail());
 
@@ -333,6 +332,17 @@ public class EditProfile extends AppCompatActivity {
                                 object1.put("about_you", aboutYou);
                             }
 
+                            object1.put("username", username);
+
+                            if (idSpol != null) {
+                                object1.put("id_spol", idSpol);
+                            }
+                            if (idTraziSpol != null) {
+                                object1.put("id_trazis_spol", idTraziSpol);
+                            }
+
+
+
                             object1.saveInBackground(new SaveCallback() {
                                 @Override
                                 public void done(ParseException e) {
@@ -368,6 +378,7 @@ public class EditProfile extends AppCompatActivity {
                     query.getInBackground(object.getObjectId(), new GetCallback < ParseUser > () {
                         @Override
                         public void done(ParseUser object, ParseException e) {
+                            username.setText(object.getString("username"));
                             txSpol.setText(object.getString("User_spol"));
                             txIme.setText(object.getString("Ime"));
                             openPopupDatum.setText(object.getString("Datum_rodenja"));
@@ -406,6 +417,7 @@ public class EditProfile extends AppCompatActivity {
         }
     }
 
+    private String idSpol, idTraziSpol;
     public void openPopupEditSex() {
 
         openPopupSpol.setOnClickListener(new View.OnClickListener() {
@@ -436,6 +448,12 @@ public class EditProfile extends AppCompatActivity {
 
                 alertDialog.setPositiveButton(getString(com.example.myapplication.R.string.spremi), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
+                        if(txSpol.getText().equals(getString(com.example.myapplication.R.string.tiSiMuskarac))){
+                            idSpol = "1";
+                        }
+                        if(txSpol.getText().equals(getString(R.string.tiSiZena))){
+                            idSpol = "0";
+                        }
                         spol = txSpol.getText().toString();
                         // editSexOfUser(spol);
                     }
@@ -479,6 +497,12 @@ public class EditProfile extends AppCompatActivity {
 
                 alertDialog.setPositiveButton(getString(com.example.myapplication.R.string.spremi), new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
+                        if(txTraziSpol.getText().equals(getString(R.string.trazimZenu))){
+                            idTraziSpol = "0";
+                        }
+                        if(txTraziSpol.getText().equals(getString(R.string.trazimMuskarca))){
+                            idTraziSpol = "1";
+                        }
                         trazimSpol = txTraziSpol.getText().toString();
                     }
                 });

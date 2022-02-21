@@ -8,28 +8,51 @@
 >
 
     <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:cardElevation="10dp"
-            app:cardCornerRadius="10dp" android:backgroundTint="#353131" app:layout_constraintTop_toTopOf="parent">
-        <TextView
-                android:text="Ime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginStart="220dp" android:id="@+id/txImeUsername" android:textSize="30sp"
-                android:textColor="#FFFFFF"/>
-        <ImageView
-                android:layout_width="182dp"
-                android:layout_height="185dp" tools:srcCompat="@tools:sample/avatars"
-                android:id="@+id/imgUser"
-                android:layout_marginTop="10dp" android:layout_marginStart="10dp" android:layout_marginBottom="10dp"/>
-        <TextView
-                android:text="@string/vidiVise"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="170dp"
-                android:layout_marginStart="200dp" android:id="@+id/txVidiVise" android:textSize="20sp"
-                android:textColor="#FFFFFF" android:layout_marginEnd="50dp"/>
+            app:cardCornerRadius="10dp" android:backgroundTint="#353131" app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/cardView" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:text="@string/vidiVise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="170dp"
+                    android:layout_marginStart="200dp" android:id="@+id/txVidiVise" android:textSize="20sp"
+                    android:textColor="#FFFFFF" android:layout_marginEnd="50dp"/>
+            <ImageView
+                    android:layout_width="182dp"
+                    android:layout_height="185dp" tools:srcCompat="@tools:sample/avatars"
+                    android:id="@+id/imgUser"
+                    android:layout_marginTop="10dp" android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"/>
+            <TextView
+                    android:text="Tomo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="200dp" android:id="@+id/txImeUsername" android:textSize="30sp"
+                    android:textColor="#FFFFFF" android:layout_alignParentTop="true"/>
+            <TextView
+                    android:text=","
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/textView22" android:textColor="@color/white" android:textSize="30sp"
+                    android:layout_toEndOf="@+id/txImeUsername" android:layout_marginStart="6dp"/>
+            <TextView
+                    android:text="30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true" android:layout_marginTop="26dp"
+                    android:id="@+id/txGodineList" android:textColor="@color/white" android:textSize="30sp"
+                    android:layout_marginStart="16dp" android:layout_alignStart="@+id/textView22"/>
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

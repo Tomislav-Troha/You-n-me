@@ -115,7 +115,7 @@
                             android:focusable="false"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:id="@+id/editTxDatumRodenja"
+                            android:id="@+id/datumRodenja"
                             android:layout_centerVertical="true"
                             android:layout_marginStart="40dp"
                             android:background="@null"

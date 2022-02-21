@@ -13,6 +13,7 @@ import com.example.myapplication.R;
 import com.example.myapplication.user_profile.ProfileofUsers;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
@@ -39,6 +40,8 @@ public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         holder.username.setText(data.get(position).getUsername());
         holder.img.setImageBitmap(data.get(position).getImg());
+        holder.godine.setText(data.get(position).getGodinaRodenja());
+
 
         holder.itemView.setOnClickListener(view -> {
             Intent intent = new Intent(context, ProfileofUsers.class);
@@ -49,6 +52,7 @@ public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
             intent.putExtra("User_traziSpol", data.get(position).getTraziSpol());
             intent.putExtra("godine_od", data.get(position).getGodine_od());
             intent.putExtra("godine_do", data.get(position).getGodine_do());
+            intent.putExtra("godinaRodenja", data.get(position).getGodinaRodenja());
             context.startActivity(intent);
             //data.get(position).getObjectID()
         });
@@ -65,11 +69,15 @@ public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
         TextView username;
         ImageView img;
         TextView clickForMore;
+        TextView godine;
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.txImeUsername);
             img = itemView.findViewById(R.id.imgUser);
+
+            godine = itemView.findViewById(R.id.txGodineList);
+
 
             clickForMore = itemView.findViewById(R.id.txVidiVise);
 

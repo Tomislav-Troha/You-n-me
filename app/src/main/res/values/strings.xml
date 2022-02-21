@@ -11,9 +11,9 @@
     <string name="person" translatable="false">Person</string>
     <string name="home" translatable="false">Home</string>
     <string name="settings" translatable="false">Settings</string>
-    <string name="Home" translatable="false">Home</string>
+    <string name="Home">Članovi</string>
     <string name="Chat" translatable="false">Chat</string>
-    <string name="Profil" translatable="false">Profil</string>
+    <string name="Profil" >Profil</string>
 
     <string name="action_settings_edit">Uredi</string>
     <string name="action_settings_save">Spremi</string>
@@ -77,8 +77,8 @@
     <string name="_do">DO</string>
     <string name="prikazNaProfiluAlert">Moraš odabrati sliku ako želiš biti prikazan drugim osobama</string>
     <string name="godina">Godina</string>
-
-
+    <string name="datumJeObavezan">Datum je obavezan</string>
+    <string name="action_settings">Uredu</string>
 
 
 </resources>

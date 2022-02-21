@@ -17,6 +17,8 @@ import com.example.myapplication.R;
 import com.example.myapplication.settings.Setting;
 import com.parse.*;
 
+import java.util.Calendar;
+
 public class ThirdFragment extends Fragment {
 
     public ThirdFragment(){
@@ -26,7 +28,7 @@ public class ThirdFragment extends Fragment {
 
     ImageView goToEdit;
 
-    TextView Profile;
+    TextView profileUsername;
 
 
     RelativeLayout pretplata;
@@ -47,16 +49,14 @@ public class ThirdFragment extends Fragment {
 
 
         //logOuTButton = (Button) view.findViewById(R.id.logOutBtn);
-        Profile = view.findViewById(R.id.txProfilenadimak);
+        profileUsername = view.findViewById(R.id.txProfilenadimak);
 
-        ParseUser user = ParseUser.getCurrentUser();
-        Profile.setText(user.getUsername());
-        user.saveInBackground();
 
 
         pretplata = view.findViewById(R.id.onClickPretplata);
 
         godine = view.findViewById(R.id.txGodine);
+
 
         setting = view.findViewById(R.id.onClickSetting);
 
@@ -68,10 +68,48 @@ public class ThirdFragment extends Fragment {
         goToEdit.setOnClickListener(view12 -> startActivity(new Intent(ThirdFragment.this.getActivity(), EditProfile.class)));
 
         getProfileImage();
+        getYears();
 
         return view;
     }
 
+
+    String rodenje = "";
+    String username = "";
+    public void getYears() {
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereEqualTo("email", ParseUser.getCurrentUser().getEmail());
+
+        query.findInBackground((objects, e) -> {
+            if (e == null) {
+                for (ParseObject object : objects) {
+
+                    if(object.get("Datum_rodenja") == null) {
+                        rodenje = "/";
+                    }
+
+                    rodenje = object.get("Datum_rodenja").toString();
+                    String[] parts = rodenje.split("/");
+
+                    int year = Calendar.getInstance().get(Calendar.YEAR);
+                    int date = Integer.parseInt(parts[2]);
+                    int intBirthday = year - date;
+                    String birthday = String.valueOf(intBirthday);
+                    godine.setText(birthday);
+
+                    //Toast.makeText(ThirdFragment.this.getActivity(), String.valueOf(year) + " " + String.valueOf(date), Toast.LENGTH_SHORT).show();
+
+                    if(object.get("username") == null) {
+                        username = "";
+                    }
+                    username = object.get("username").toString();
+                    profileUsername.setText(username);
+                }
+            }else {
+                Log.e(getString(R.string.dosloJeDoGreske), " " + e.getLocalizedMessage());
+            }
+        });
+    }
 
 
     public void getProfileImage() {

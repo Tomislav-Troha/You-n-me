@@ -62,4 +62,7 @@
     <string name="godina">years old</string>
     <string name="action_settings_edit">Edit</string>
     <string name="action_settings_save">Save</string>
+    <string name="Home">Members</string>
+    <string name="Profil">Profile</string>
+    <string name="datumJeObavezan">Date is required</string>
 </resources>
