@@ -16,7 +16,7 @@
       <EditText
               android:layout_width="230dp"
               android:layout_height="wrap_content"
-              android:inputType="textPersonName"
+              android:inputType="textPassword"
               android:ems="10"
               android:id="@+id/editLozinka"
               tools:ignore="MissingConstraints"
@@ -62,7 +62,7 @@
       <EditText
               android:layout_width="230dp"
               android:layout_height="wrap_content"
-              android:inputType="textPersonName"
+              android:inputType="textEmailAddress"
               android:ems="10"
               android:id="@+id/editEmail"
               tools:ignore="MissingConstraints"

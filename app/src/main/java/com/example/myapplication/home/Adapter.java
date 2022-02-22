@@ -13,7 +13,6 @@ import com.example.myapplication.R;
 import com.example.myapplication.user_profile.ProfileofUsers;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Calendar;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
@@ -53,6 +52,7 @@ public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
             intent.putExtra("godine_od", data.get(position).getGodine_od());
             intent.putExtra("godine_do", data.get(position).getGodine_do());
             intent.putExtra("godinaRodenja", data.get(position).getGodinaRodenja());
+            intent.putExtra("objectId", data.get(position).getObjectId());
             context.startActivity(intent);
             //data.get(position).getObjectID()
         });
@@ -74,7 +74,7 @@ public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.txImeUsername);
-            img = itemView.findViewById(R.id.imgUser);
+            img = itemView.findViewById(R.id.iconImg);
 
             godine = itemView.findViewById(R.id.txGodineList);
 

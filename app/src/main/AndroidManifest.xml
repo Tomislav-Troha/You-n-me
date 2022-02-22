@@ -44,7 +44,8 @@
         </activity>
 
         <activity
-                android:name=".login_register.MainActivity">
+                android:name=".login_register.MainActivity"
+                android:launchMode = "singleTop">
         </activity>
 
 

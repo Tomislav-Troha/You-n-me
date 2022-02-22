@@ -13,8 +13,9 @@ public class Cards {
     private String traziSpol;
     private String godine_do;
     private String godine_od;
+    private String objectId;
 
-    public Cards(String username, Bitmap img, String aboutPartner, String aboutYou, String traziSpol, String godine_od, String godine_do, String godinaRodenja) {
+    public Cards(String username, Bitmap img, String aboutPartner, String aboutYou, String traziSpol, String godine_od, String godine_do, String godinaRodenja, String objectId) {
         this.img = img;
         this.username = username;
         this.aboutPartner = aboutPartner;
@@ -23,6 +24,7 @@ public class Cards {
         this.godine_od = godine_od;
         this.godine_do = godine_do;
         this.godinaRodenja = godinaRodenja;
+        this.objectId = objectId;
     }
 
     public String getGodinaRodenja() {
@@ -72,6 +74,13 @@ public class Cards {
     }
     public void setIme(String ime) {
         this.ime = ime;
+    }
+
+    public String getObjectId() {
+        return objectId;
+    }
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
     }
 
     public Bitmap getImg() {

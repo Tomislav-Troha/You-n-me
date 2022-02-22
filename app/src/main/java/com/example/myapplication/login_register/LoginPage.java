@@ -62,6 +62,16 @@ public class LoginPage extends AppCompatActivity {
                         }
                     });
                 }
+
+                if(isEmpty(email)){
+                    Toast t = Toast.makeText(LoginPage.this, getString(R.string.ispuniteSvaPolja), Toast.LENGTH_SHORT);
+                    t.show();
+                    email.setError("Required");
+                }
+
+                if(isEmpty(lozinka)){
+                    lozinka.setError("Required");
+                }
             }
         });
     }

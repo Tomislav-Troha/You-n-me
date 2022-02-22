@@ -20,13 +20,12 @@ import com.parse.*;
 public class FirstFragment extends Fragment {
 
 
-
     public FirstFragment() {
         // require a empty public constructor
     }
 
     RecyclerView listView;
-    ArrayList < Cards > arrayList = new ArrayList < > ();
+    ArrayList<Cards> arrayList = new ArrayList<>();
     Adapter adapter;
 
     String getGendre = "";
@@ -51,31 +50,28 @@ public class FirstFragment extends Fragment {
     String birthday = "";
     Bitmap bitmap = null;
     String username = "";
-
-
-
-
+    String objectId = "";
 
 
     public void getCards() {
-        ParseQuery < ParseUser > query1 = ParseUser.getQuery();
+        ParseQuery<ParseUser> query1 = ParseUser.getQuery();
         query1.whereEqualTo("email", ParseUser.getCurrentUser().getEmail());
 
         query1.getFirstInBackground((object1, e2) -> {
             if (e2 == null) {
                 getGendre = object1.getString("id_trazis_spol");
 
-                ParseQuery < ParseUser > query = ParseUser.getQuery();
+                ParseQuery<ParseUser> query = ParseUser.getQuery();
                 query.whereNotEqualTo("email", ParseUser.getCurrentUser().getEmail());
                 //Toast.makeText(FirstFragment.this.getActivity(), getGendre, Toast.LENGTH_SHORT).show();
                 query.whereNotEqualTo("id_trazis_spol", getGendre);
 
                 query.findInBackground((objects, e) -> {
-                    arrayList = new ArrayList < > ();
+                    arrayList = new ArrayList<Cards>();
 
-                    if(e == null) {
+                    if (e == null) {
 
-                        for (ParseObject object: objects) {
+                        for (ParseObject object : objects) {
 
                             ParseFile imageFile = (ParseFile) object.get("Profil_image");
                             if (imageFile != null) {
@@ -128,8 +124,10 @@ public class FirstFragment extends Fragment {
 
                                         username = (object.get("username").toString());
 
+                                        objectId = object.getObjectId();
+
                                         //Toast.makeText(FirstFragment.this.getActivity(),aboutPartner, Toast.LENGTH_SHORT).show();
-                                        Cards cards = new Cards(username, bitmap, aboutPartner, aboutYou, userTraziSpol, godine_od, godine_do, birthday);
+                                        Cards cards = new Cards(username, bitmap, aboutPartner, aboutYou, userTraziSpol, godine_od, godine_do, birthday, objectId);
                                         arrayList.add(cards);
                                         listView.setLayoutManager(new LinearLayoutManager(FirstFragment.this.getActivity()));
                                         adapter = new Adapter(FirstFragment.this.getActivity(), arrayList);
@@ -149,13 +147,10 @@ public class FirstFragment extends Fragment {
                         Toast.makeText(FirstFragment.this.getActivity(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-            }
-            else {
+            } else {
                 Toast.makeText(FirstFragment.this.getActivity(), e2.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
 
         });
-
-
     }
 }
