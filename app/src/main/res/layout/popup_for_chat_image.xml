@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <LinearLayout
+            android:layout_width="196dp"
+            android:layout_height="334dp"
+            android:background="@android:color/white"
+            android:orientation="vertical" android:layout_marginTop="20dp" android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" android:layout_marginBottom="20dp">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="158dp"
+                android:background="@mipmap/add_image_foreground" android:id="@+id/imgPopup"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

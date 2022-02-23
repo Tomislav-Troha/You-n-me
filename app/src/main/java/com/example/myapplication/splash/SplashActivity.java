@@ -6,7 +6,6 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.telecom.TelecomManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -24,10 +23,6 @@ public class SplashActivity extends AppCompatActivity {
 
     ImageView hearts;
     TextView youMe;
-
-    CharSequence charSequence;
-    int index;
-    long delay = 200;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

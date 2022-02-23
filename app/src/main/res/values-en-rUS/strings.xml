@@ -35,7 +35,7 @@
     <string name="trazim">Looking for</string>
     <string name="odjava">Logged out</string>
     <string name="odjavaa">Log out</string>
-    <string name="promjenaLozinke">Change your password</string>
+    <string name="promjenaLozinke">Change password</string>
     <string name="upravljanjeRacunom">Manage account</string>
     <string name="obavjesti">Notification</string>
     <string name="vidiVise">Click for more</string>
@@ -65,4 +65,9 @@
     <string name="Home">Members</string>
     <string name="Profil">Profile</string>
     <string name="datumJeObavezan">Date is required</string>
+    <string name="staraLozinka">Old password</string>
+    <string name="novalozinka">New password</string>
+    <string name="promjeniPass">Change</string>
+    <string name="passPromjenjen">Password changed</string>
+    <string name="stariPassKriv">Old password is incorrect</string>
 </resources>

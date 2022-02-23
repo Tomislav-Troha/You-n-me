@@ -1,12 +1,14 @@
 package com.example.myapplication.user_profile;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import com.ceylonlabs.imageviewpopup.ImagePopup;
 import com.example.myapplication.R;
 import com.parse.*;
 
@@ -86,10 +88,23 @@ public class ProfileofUsers extends AppCompatActivity {
         godineDO.setText(godine_do);
         godineOD.setText(godine_od);
         txgodine.setText(godine);
-       //addToChat();
 
 
-       // mark.setOnClickListener(view -> addToChat());
+        ImagePopup imagePopup = new ImagePopup(ProfileofUsers.this);
+        imagePopup.setWindowHeight(800); // Optional
+        imagePopup.setWindowWidth(800); // Optional
+        imagePopup.setBackgroundColor(Color.BLACK);  // Optional
+        imagePopup.setHideCloseIcon(true);  // Optional
+        imagePopup.setImageOnClickClose(true);  // Optional
+        imagePopup.setFullScreen(true);
+
+        imagePopup.initiatePopup(profileImg.getDrawable());
+
+        profileImg.setOnClickListener(view -> {
+            imagePopup.viewPopup();
+        });
+
+
 
 
     }

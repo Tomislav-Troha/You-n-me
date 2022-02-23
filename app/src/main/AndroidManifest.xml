@@ -34,6 +34,7 @@
             >
         <activity android:name=".splash.SplashActivity"
                   android:theme="@style/MyTheme"
+                  android:screenOrientation = "portrait"
                   android:exported="true">
 
             <intent-filter>
@@ -45,6 +46,7 @@
 
         <activity
                 android:name=".login_register.MainActivity"
+                android:screenOrientation = "portrait"
                 android:launchMode = "singleTop">
         </activity>
 
@@ -61,31 +63,45 @@
                 android:value="@string/back4app_client_key" />
 
         <activity
-                android:name=".login_register.JoinUsPage">
+                android:name=".login_register.JoinUsPage"
+                android:screenOrientation = "portrait">
         </activity>
         <activity
-                android:name=".login_register.Choose">
+                android:name=".login_register.Choose"
+                android:screenOrientation = "portrait">
         </activity>
         <activity
                 android:name=".home.HomePage"
+                android:screenOrientation = "portrait"
                 android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
         </activity>
         <activity
-                android:name=".login_register.LoginPage">
+                android:name=".login_register.LoginPage"
+                android:screenOrientation = "portrait">
         </activity>
         <activity
                 android:name=".settings.Setting"
+                android:screenOrientation = "portrait"
                 android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
                 android:label="@string/postavke">
         </activity>
         <activity
                 android:name=".settings.EditProfile"
+                android:screenOrientation = "portrait"
                 android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
                 android:label="@string/urediProfil">
         </activity>
 
         <activity
-                android:name=".user_profile.ProfileofUsers">
+                android:name=".user_profile.ProfileofUsers"
+                android:screenOrientation = "portrait">
+        </activity>
+
+        <activity
+                android:name=".settings.ChangePassword"
+                android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+                android:label="@string/promjenaLozinke"
+                android:screenOrientation = "portrait">
         </activity>
 
 

@@ -15,6 +15,7 @@ public class Setting extends AppCompatActivity {
 
 
     RelativeLayout logOut;
+    RelativeLayout changePass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,15 +24,11 @@ public class Setting extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        logOut = (RelativeLayout) findViewById(R.id.onClickLogOut);
+        logOut = findViewById(R.id.onClickLogOut);
+        changePass = findViewById(R.id.onClickGoToChangePass);
 
-        logOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                logOutUser();
-            }
-        });
-
+        logOut.setOnClickListener(view -> logOutUser());
+        changePass.setOnClickListener(view -> gotoChangePass());
 
     }
 
@@ -57,7 +54,10 @@ public class Setting extends AppCompatActivity {
             startActivity(new Intent(Setting.this, MainActivity.class));
                 } else { // user is out
                 }
+    }
 
+    public void gotoChangePass() {
+        startActivity(new Intent(Setting.this, ChangePassword.class));
     }
 
 }

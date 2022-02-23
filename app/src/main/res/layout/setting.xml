@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_alignParentTop="true" android:layout_marginTop="24dp"
-                android:layout_alignParentStart="true" android:layout_marginStart="25dp" android:textSize="30dp"/>
+                android:layout_alignParentStart="true" android:layout_marginStart="25dp" android:textSize="30sp"/>
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp" app:srcCompat="@android:drawable/ic_menu_set_as"
@@ -54,18 +54,18 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="200dp">
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="200dp"
+            android:id="@+id/onClickGoToChangePass">
 
         <TextView
                 android:text="@string/promjenaLozinke"
-                android:clickable="true"
                 android:textColor="@drawable/text_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:id="@+id/textView12"
                 android:gravity="center"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="24dp" android:layout_alignParentStart="true"
-                android:layout_marginStart="25dp" android:textSize="30dp"/>
+                android:layout_marginStart="25dp" android:textSize="30sp"/>
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp" app:srcCompat="@android:drawable/ic_lock_lock"
@@ -89,7 +89,7 @@
                 android:gravity="center|center_horizontal"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="24dp" android:layout_alignParentStart="true"
-                android:layout_marginStart="25dp" android:textSize="30dp"/>
+                android:layout_marginStart="25dp" android:textSize="30sp"/>
         <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp" app:srcCompat="@android:drawable/ic_menu_info_details"
@@ -113,10 +113,10 @@
                 android:id="@+id/txoba"
                 android:gravity="center"
                 android:layout_alignParentStart="true" android:layout_alignParentTop="true"
-                android:layout_marginTop="24dp" android:layout_marginStart="25dp" android:textSize="30dp"/>
+                android:layout_marginTop="24dp" android:layout_marginStart="25dp" android:textSize="30sp"/>
         <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp" app:srcCompat="@android:drawable/ic_popup_reminder"
+                android:layout_width="40dp"
+                android:layout_height="40dp" app:srcCompat="@android:drawable/ic_popup_reminder"
                 android:id="@+id/imageView3"
                 android:layout_alignParentEnd="true" android:layout_alignParentTop="true"
                 android:layout_marginTop="12dp" android:layout_marginEnd="35dp"/>

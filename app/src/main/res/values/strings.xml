@@ -79,6 +79,11 @@
     <string name="godina">Godina</string>
     <string name="datumJeObavezan">Datum je obavezan</string>
     <string name="action_settings">Uredu</string>
+    <string name="staraLozinka">Stara lozinka</string>
+    <string name="novalozinka">Nova lozinka</string>
+    <string name="promjeniPass">Promijeni</string>
+    <string name="passPromjenjen">Lozinka promjenjena</string>
+    <string name="stariPassKriv">Stara lozinka je netočna</string>
 
 
 </resources>

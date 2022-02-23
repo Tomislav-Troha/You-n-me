@@ -24,7 +24,7 @@
                     android:src="@mipmap/dolezabar_foreground"
                     app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
                     android:id="@+id/profileChatUserImg"
-                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="4dp"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
                     app:civ_border_color="#FFEF2719"
                     app:layout_constraintHorizontal_bias="0.497" android:layout_alignParentStart="true"
                     android:layout_marginStart="10dp" android:layout_alignParentTop="true"/>

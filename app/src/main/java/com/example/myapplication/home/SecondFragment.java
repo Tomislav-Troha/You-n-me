@@ -24,6 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 public class SecondFragment extends Fragment {
@@ -60,7 +61,6 @@ public class SecondFragment extends Fragment {
     Bitmap bitmap = null;
     String username = "";
     String gendre = "";
-
 
      public void getCards() {
         ParseQuery<ParseUser> query1 = ParseUser.getQuery();
@@ -121,7 +121,7 @@ public class SecondFragment extends Fragment {
                                             godine_do = "";
                                         } else {
                                             godine_do = object.get("godina_do").toString();
-                                        }
+                                        } */
 
 
                                         godinaRodenja = object.get("Datum_rodenja").toString();
@@ -129,12 +129,12 @@ public class SecondFragment extends Fragment {
                                         int year = Calendar.getInstance().get(Calendar.YEAR);
                                         int date = Integer.parseInt(parts[2]);
                                         int intBirthday = year - date;
-                                        birthday = String.valueOf(intBirthday); */
+                                        birthday = String.valueOf(intBirthday);
 
                                         username = (object.get("username").toString());
 
                                         //Toast.makeText(FirstFragment.this.getActivity(),aboutPartner, Toast.LENGTH_SHORT).show();
-                                        ChatCards chatCards = new ChatCards(username, bitmap);
+                                        ChatCards chatCards = new ChatCards(username, bitmap, birthday);
                                         arrayList.add(chatCards);
                                         listView.setLayoutManager(new LinearLayoutManager(SecondFragment.this.getActivity()));
                                         adapter = new ChatAdapter(SecondFragment.this.getActivity(), arrayList);
