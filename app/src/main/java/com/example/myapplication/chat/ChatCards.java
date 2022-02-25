@@ -1,4 +1,4 @@
-package com.example.myapplication.Chat;
+package com.example.myapplication.chat;
 
 
 import android.graphics.Bitmap;

@@ -3,7 +3,6 @@ package com.example.myapplication.settings;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +16,13 @@ public class Setting extends AppCompatActivity {
     RelativeLayout logOut;
     RelativeLayout changePass;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.setting);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         logOut = findViewById(R.id.onClickLogOut);
         changePass = findViewById(R.id.onClickGoToChangePass);
@@ -52,7 +52,7 @@ public class Setting extends AppCompatActivity {
             ParseUser.logOut();
             Toast.makeText(Setting.this, getString(R.string.odjava), Toast.LENGTH_SHORT).show();
             startActivity(new Intent(Setting.this, MainActivity.class));
-                } else { // user is out
+            finish();
                 }
     }
 

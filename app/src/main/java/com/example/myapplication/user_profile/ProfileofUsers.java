@@ -3,10 +3,12 @@ package com.example.myapplication.user_profile;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import com.ceylonlabs.imageviewpopup.ImagePopup;
 import com.example.myapplication.R;
@@ -25,6 +27,8 @@ public class ProfileofUsers extends AppCompatActivity {
     TextView godineDO;
     TextView txgodine;
 
+    Toolbar toolbar;
+
     Button mark;
 
     String objectId = "";
@@ -32,6 +36,13 @@ public class ProfileofUsers extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
+
+
 
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
@@ -108,6 +119,22 @@ public class ProfileofUsers extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 
 
     public void addToChat () {

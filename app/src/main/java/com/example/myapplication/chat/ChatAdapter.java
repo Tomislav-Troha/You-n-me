@@ -1,9 +1,7 @@
-package com.example.myapplication.Chat;
+package com.example.myapplication.chat;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.ceylonlabs.imageviewpopup.ImagePopup;
 import com.example.myapplication.R;
-import com.example.myapplication.home.SecondFragment;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;

@@ -70,4 +70,5 @@
     <string name="promjeniPass">Change</string>
     <string name="passPromjenjen">Password changed</string>
     <string name="stariPassKriv">Old password is incorrect</string>
+    <string name="donate">Donate</string>
 </resources>

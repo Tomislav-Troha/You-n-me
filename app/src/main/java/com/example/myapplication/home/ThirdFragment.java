@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.example.myapplication.settings.EditProfile;
 import com.example.myapplication.R;
 import com.example.myapplication.settings.Setting;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.parse.*;
 
 import java.util.Calendar;
@@ -32,10 +33,14 @@ public class ThirdFragment extends Fragment {
 
 
     RelativeLayout pretplata;
-
+    RelativeLayout pomoc;
     RelativeLayout setting;
+    RelativeLayout activate;
 
     TextView godine;
+
+
+
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -47,13 +52,18 @@ public class ThirdFragment extends Fragment {
 
 
 
+        activate = view.findViewById(R.id.clcActivate);
+        activate.setOnClickListener(view1 -> showBottomSheetDialog());
+
+        pomoc = view.findViewById(R.id.txPomoc);
+        pomoc.setOnClickListener(view1 -> Toast.makeText(getContext(), "Nemozem ni sebi pomoc", Toast.LENGTH_SHORT).show());
 
         //logOuTButton = (Button) view.findViewById(R.id.logOutBtn);
         profileUsername = view.findViewById(R.id.txProfilenadimak);
 
 
 
-        pretplata = view.findViewById(R.id.onClickPretplata);
+
 
         godine = view.findViewById(R.id.txGodine);
 
@@ -143,6 +153,21 @@ public class ThirdFragment extends Fragment {
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("You 'n Me");
     }
 
+    //za poziv bottom dialoga
+ public void showBottomSheetDialog() {
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(ThirdFragment.this.getActivity());
+        bottomSheetDialog.setContentView(R.layout.bottom_sheet_dialog_layout);
+
+        Button petKN = bottomSheetDialog.findViewById(R.id.btnPetKN);
+        Button dvapetKN = bottomSheetDialog.findViewById(R.id.btnDvapetKN);
+
+
+
+     petKN.setOnClickListener(view ->  Toast.makeText(ThirdFragment.this.getActivity(), "5 HRK donated", Toast.LENGTH_SHORT).show());
+     dvapetKN.setOnClickListener(view ->  Toast.makeText(ThirdFragment.this.getActivity(), "25 HRK donated", Toast.LENGTH_SHORT).show());
+
+        bottomSheetDialog.show();
+    }
 
 
 }

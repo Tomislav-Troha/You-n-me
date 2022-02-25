@@ -84,6 +84,7 @@
     <string name="promjeniPass">Promijeni</string>
     <string name="passPromjenjen">Lozinka promjenjena</string>
     <string name="stariPassKriv">Stara lozinka je netočna</string>
+    <string name="donate">Doniraj</string>
 
 
 </resources>
