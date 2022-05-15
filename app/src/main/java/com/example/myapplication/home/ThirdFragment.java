@@ -25,12 +25,9 @@ public class ThirdFragment extends Fragment {
     public ThirdFragment(){
         // require a empty public constructor
     }
-
-
     ImageView goToEdit;
 
     TextView profileUsername;
-
 
     RelativeLayout pretplata;
     RelativeLayout pomoc;
@@ -39,18 +36,12 @@ public class ThirdFragment extends Fragment {
 
     TextView godine;
 
-
-
-
-
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_third, container, false);
-
-
 
         activate = view.findViewById(R.id.clcActivate);
         activate.setOnClickListener(view1 -> showBottomSheetDialog());
@@ -60,9 +51,6 @@ public class ThirdFragment extends Fragment {
 
         //logOuTButton = (Button) view.findViewById(R.id.logOutBtn);
         profileUsername = view.findViewById(R.id.txProfilenadimak);
-
-
-
 
 
         godine = view.findViewById(R.id.txGodine);
@@ -161,13 +149,9 @@ public class ThirdFragment extends Fragment {
         Button petKN = bottomSheetDialog.findViewById(R.id.btnPetKN);
         Button dvapetKN = bottomSheetDialog.findViewById(R.id.btnDvapetKN);
 
-
-
      petKN.setOnClickListener(view ->  Toast.makeText(ThirdFragment.this.getActivity(), "5 HRK donated", Toast.LENGTH_SHORT).show());
      dvapetKN.setOnClickListener(view ->  Toast.makeText(ThirdFragment.this.getActivity(), "25 HRK donated", Toast.LENGTH_SHORT).show());
 
         bottomSheetDialog.show();
     }
-
-
 }

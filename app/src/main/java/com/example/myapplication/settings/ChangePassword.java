@@ -9,7 +9,6 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
-import com.example.myapplication.login_register.LoginPage;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;

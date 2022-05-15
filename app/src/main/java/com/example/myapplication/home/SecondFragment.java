@@ -38,7 +38,6 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_second, container, false);
 
-
         listView = view.findViewById(R.id.recycler_view_chat);
 
         getCards();

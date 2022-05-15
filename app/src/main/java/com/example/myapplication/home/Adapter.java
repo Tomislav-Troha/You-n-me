@@ -2,7 +2,6 @@ package com.example.myapplication.home;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.ceylonlabs.imageviewpopup.ImagePopup;
 import com.example.myapplication.R;
 import com.example.myapplication.user_profile.ProfileofUsers;
 import org.jetbrains.annotations.NotNull;
@@ -55,7 +53,9 @@ public class Adapter extends RecyclerView.Adapter < Adapter.ViewHolder > {
             intent.putExtra("godine_do", data.get(position).getGodine_do());
             intent.putExtra("godinaRodenja", data.get(position).getGodinaRodenja());
             intent.putExtra("objectId", data.get(position).getObjectId());
+
             context.startActivity(intent);
+
             //data.get(position).getObjectID()
         });
 

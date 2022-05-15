@@ -35,7 +35,7 @@
                 </androidx.appcompat.widget.Toolbar>
             </RelativeLayout>
             <RelativeLayout
-                    android:layout_height="700dp" android:layout_width="match_parent">
+                    android:layout_height="wrap_content" android:layout_width="match_parent">
 
                 <TextView
                         android:layout_width="380dp"
@@ -57,15 +57,6 @@
                         android:layout_marginStart="7dp" android:layout_alignParentBottom="false"
                         android:id="@+id/txAboutPartner" android:textSize="22sp" android:layout_marginTop="18dp"
                         android:layout_below="@id/relMan"/>
-                <TextView
-                        android:text="@string/slike"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" android:id="@+id/textView34"
-                        android:layout_alignParentStart="true" android:layout_marginStart="7dp"
-                        android:textSize="24sp"
-                        android:layout_marginTop="24dp" android:layout_below="@+id/txAboutPartner"/>
                 <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

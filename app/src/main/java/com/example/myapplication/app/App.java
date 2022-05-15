@@ -1,12 +1,8 @@
 package com.example.myapplication.app;
 
 import android.app.Application;
-
 import com.example.myapplication.R;
 import com.parse.Parse;
-
-
-
 
 public class App extends Application {
     @Override
